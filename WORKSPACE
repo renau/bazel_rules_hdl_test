@@ -22,16 +22,16 @@ load("@rules_pkg//:deps.bzl", "rules_pkg_dependencies")
 rules_pkg_dependencies()
 
 
-rules_hdl_git_hash = "9bd0a26bb5d6fc96575640c16d82a18df2b7c39d"
-rules_hdl_git_sha256 = "fa2eb1322ef7d0989dde65ea177227366335145a21ec80d93a9f0d41b21dd299"
+rules_hdl_git_hash = "3497bab04e37514dcdeb47e3090d57d78e2aa01a"
+rules_hdl_git_sha256 = "8e08ae3edf060f61025b54945e8492b2238d2026d8ac7afc021008600edd70d9"
 
 http_archive(
     name = "rules_hdl",
     sha256 = rules_hdl_git_sha256,
     strip_prefix = "bazel_rules_hdl-%s" % rules_hdl_git_hash,
     urls = [
-        # "https://github.com/hdl/bazel_rules_hdl/archive/%s.tar.gz" % rules_hdl_git_hash,
-        "https://github.com/renau/bazel_rules_hdl/archive/%s.tar.gz" % rules_hdl_git_hash,
+        "https://github.com/hdl/bazel_rules_hdl/archive/%s.tar.gz" % rules_hdl_git_hash,
+        # "https://github.com/renau/bazel_rules_hdl/archive/%s.tar.gz" % rules_hdl_git_hash,
     ],
 )
 
@@ -41,3 +41,40 @@ rules_hdl_dependency_support()
 load("@rules_hdl//:init.bzl", rules_hdl_init = "init")
 rules_hdl_init()
 
+http_archive(
+    name = "com_grail_bazel_toolchain",
+    sha256 = "77c368349e1a90e6e133c7a16743c622856a0e6b4c9935d7d40ece53cf9d3576",
+    strip_prefix = "bazel-toolchain-7e7c7cf1f965f348861085183d79b6a241764390",
+    urls = ["https://github.com/grailbio/bazel-toolchain/archive/7e7c7cf1f965f348861085183d79b6a241764390.tar.gz"],
+)
+
+load("@com_grail_bazel_toolchain//toolchain:deps.bzl", "bazel_toolchain_dependencies")
+
+bazel_toolchain_dependencies()
+
+load("@com_grail_bazel_toolchain//toolchain:rules.bzl", "llvm_toolchain")
+
+llvm_toolchain(
+    name = "llvm_toolchain",
+    llvm_version = "10.0.1",
+    sha256 = {
+        "linux": "02a73cfa031dfe073ba8d6c608baf795aa2ddc78eed1b3e08f3739b803545046",
+    },
+    strip_prefix = {
+        "linux": "clang+llvm-10.0.1-x86_64-pc-linux-gnu",
+    },
+    urls = {
+        "linux": [
+            # Use a custom built Clang+LLVM binrary distribution that is more portable than
+            # the official builds because it's built against an older glibc and does not have
+            # dynamic library dependencies to tinfo, gcc_s or stdlibc++.
+            #
+            # For more details, see the files under toolchains/clang.
+            "https://github.com/retone/deps/releases/download/na5/clang+llvm-10.0.1-x86_64-pc-linux-gnu.tar.xz",
+        ],
+    },
+    # Disabled for now waiting on https://github.com/pybind/pybind11_bazel/pull/29
+    # sysroot = {
+    #     "linux": "@org_chromium_sysroot_linux_x64//:sysroot",
+    # },
+)
