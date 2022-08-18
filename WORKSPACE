@@ -78,3 +78,33 @@ llvm_toolchain(
     #     "linux": "@org_chromium_sysroot_linux_x64//:sysroot",
     # },
 )
+
+
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+
+# Verilator
+http_archive(
+    name = "rules_verilator",
+    sha256 = "cf03570cb3bb87ef9c7c4bdfee9753a309b0cdd59a7247aab70c9a4c68b97913",
+    strip_prefix = "rules_verilator-c9d360d5b3cd1750472d37b57bfce0c6fa8d98e8",
+    urls = ["https://github.com/kkiningh/rules_verilator/archive/c9d360d5b3cd1750472d37b57bfce0c6fa8d98e8.tar.gz"],
+)
+
+load(
+    "@rules_verilator//verilator:repositories.bzl",
+    "rules_verilator_dependencies",
+    "rules_verilator_toolchains"
+)
+rules_verilator_dependencies()
+rules_verilator_toolchains()
+
+# Register toolchain dependencies
+load("@rules_m4//m4:m4.bzl", "m4_register_toolchains")
+m4_register_toolchains()
+
+load("@rules_flex//flex:flex.bzl", "flex_register_toolchains")
+flex_register_toolchains()
+
+load("@rules_bison//bison:bison.bzl", "bison_register_toolchains")
+bison_register_toolchains()
+
