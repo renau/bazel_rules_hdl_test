@@ -8,7 +8,7 @@ vluint64_t     global_time = 0;
 VerilatedVcdC *tfp         = 0;
 
 void do_terminate() {
-#ifdef TRACE
+#ifdef VM_TRACE
   tfp->dump(global_time);
   tfp->close();
 #endif
@@ -21,14 +21,14 @@ void do_terminate() {
 void advance_clock(Vregfile_256_1w_1r *uut) {
   uut->clock ^= 1;
   uut->eval();
-#ifdef TRACE
+#ifdef VM_TRACE
   tfp->dump(global_time);
 #endif
   uut->clock ^= 1;
 
   global_time++;
   uut->eval();
-#ifdef TRACE
+#ifdef VM_TRACE
   tfp->dump(global_time);
 #endif
 
@@ -37,7 +37,7 @@ void advance_clock(Vregfile_256_1w_1r *uut) {
 
 int main() {
   Vregfile_256_1w_1r top;
-#ifdef TRACE
+#ifdef VM_TRACE
   // init trace dump
   Verilated::traceEverOn(true);
   tfp = new VerilatedVcdC;
@@ -53,10 +53,10 @@ int main() {
 
   while (global_time < 500) {
     top.wena = 1;
-    top.waddr = conta;
+    top.waddr = conta & 0x1F;
     top.wdata = global_time;
 
-    top.raddr0 = conta-5;
+    top.raddr0 = (conta-5) & 0x1F;
     advance_clock(&top);
 
     ++conta;
