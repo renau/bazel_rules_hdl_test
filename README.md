@@ -39,13 +39,26 @@ yosys -p "read_verilog -DNO_PRIMITIVES */sky130_fd_sc_hd__*_?.v; write_verilog s
 
 ## To run with verilator
 
+Gate level simulation (runs yosys synthesis of counter, and runs verilator with the generated verilog)
+
 ```
-bazel build //regfile:all
-./bazel-bin/regfile/top
+bazel build //counter:top_gls 
+ ./bazel-bin/counter/top_gls
 ```
 
-or directly with bazel:
+Without the gate level simulation (gls)
 ```
-bazel run //regfile:top
+bazel build //counter:top
+ ./bazel-bin/counter/top
+```
+
+
+## Netlist verilator (DIRECTLY, not with bazel)
+
+Tested with Verilator 4.222
+
+```
+verilator -O3 --top-module regfile_256_1w_1r ./verilog_regfile_synth_synth_output.v model/sky130_fd_sc_hd.v --cc --trace --exe ./regfile/dut_regfile.cpp
+make -C obj_dir -f Vregfile_256_1w_1r.mk Vregfile_256_1w_1r
 ```
 

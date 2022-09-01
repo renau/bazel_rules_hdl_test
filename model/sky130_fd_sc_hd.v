@@ -2305,8 +2305,7 @@ module sky130_fd_sc_hd__a2bb2oi_2(Y, A1_N, A2_N, B1, B2);
   wire VPWR;
   (* src = "a2bb2oi/sky130_fd_sc_hd__a2bb2oi_2.v:91.12-91.13" *)
   output Y;
-  (* module_not_derived = 32'd1 *)
-  (* src = "a2bb2oi/sky130_fd_sc_hd__a2bb2oi_2.v:103.30-109.6" *)
+
   sky130_fd_sc_hd__a2bb2oi base (
     .A1_N(A1_N),
     .A2_N(A2_N),
@@ -2314,6 +2313,7 @@ module sky130_fd_sc_hd__a2bb2oi_2(Y, A1_N, A2_N, B1, B2);
     .B2(B2),
     .Y(Y)
   );
+
   assign VPWR = 1'h1;
   assign VGND = 1'h0;
   assign VPB = 1'h1;
@@ -5612,28 +5612,14 @@ endmodule
 (* cells_not_processed =  1  *)
 (* src = "conb/sky130_fd_sc_hd__conb.behavioral.v:33.1-52.10" *)
 module sky130_fd_sc_hd__conb(HI, LO);
-  (* src = "conb/sky130_fd_sc_hd__conb.behavioral.v:39.12-39.14" *)
   output HI;
-  (* src = "conb/sky130_fd_sc_hd__conb.behavioral.v:40.12-40.14" *)
   output LO;
-  (* src = "conb/sky130_fd_sc_hd__conb.behavioral.v:0.0-0.0" *)
   wire VGND;
-  (* src = "conb/sky130_fd_sc_hd__conb.behavioral.v:0.0-0.0" *)
   wire VNB;
-  (* src = "conb/sky130_fd_sc_hd__conb.behavioral.v:0.0-0.0" *)
   wire VPB;
-  (* src = "conb/sky130_fd_sc_hd__conb.behavioral.v:0.0-0.0" *)
   wire VPWR;
-  (* module_not_derived = 32'd1 *)
-  (* src = "conb/sky130_fd_sc_hd__conb.behavioral.v:50.14-50.32" *)
-  \pulldown  pulldown0 (
-    LO
-  );
-  (* module_not_derived = 32'd1 *)
-  (* src = "conb/sky130_fd_sc_hd__conb.behavioral.v:49.14-49.32" *)
-  \pullup  pullup0 (
-    HI
-  );
+  assign LO=1'h0;
+  assign HI=1'h1;
   assign VPWR = 1'h1;
   assign VGND = 1'h0;
   assign VPB = 1'h1;
@@ -5796,11 +5782,11 @@ module sky130_fd_sc_hd__dfbbn(Q, Q_N, D, CLK_N, SET_B, RESET_B);
   (* src = "dfbbn/sky130_fd_sc_hd__dfbbn.behavioral.v:50.12-50.17" *)
   input CLK_N;
   (* src = "dfbbn/sky130_fd_sc_hd__dfbbn.behavioral.v:65.10-65.23" *)
-  wire CLK_N_delayed;
+  wire CLK_N;
   (* src = "dfbbn/sky130_fd_sc_hd__dfbbn.behavioral.v:49.12-49.13" *)
   input D;
   (* src = "dfbbn/sky130_fd_sc_hd__dfbbn.behavioral.v:69.10-69.19" *)
-  wire D_delayed;
+  wire D;
   (* src = "dfbbn/sky130_fd_sc_hd__dfbbn.behavioral.v:47.12-47.13" *)
   output Q;
   (* src = "dfbbn/sky130_fd_sc_hd__dfbbn.behavioral.v:48.12-48.15" *)
@@ -5810,13 +5796,13 @@ module sky130_fd_sc_hd__dfbbn(Q, Q_N, D, CLK_N, SET_B, RESET_B);
   (* src = "dfbbn/sky130_fd_sc_hd__dfbbn.behavioral.v:52.12-52.19" *)
   input RESET_B;
   (* src = "dfbbn/sky130_fd_sc_hd__dfbbn.behavioral.v:66.10-66.25" *)
-  wire RESET_B_delayed;
+  wire RESET_B;
   (* src = "dfbbn/sky130_fd_sc_hd__dfbbn.behavioral.v:62.10-62.13" *)
   wire SET;
   (* src = "dfbbn/sky130_fd_sc_hd__dfbbn.behavioral.v:51.12-51.17" *)
   input SET_B;
   (* src = "dfbbn/sky130_fd_sc_hd__dfbbn.behavioral.v:67.10-67.23" *)
-  wire SET_B_delayed;
+  wire SET_B;
   (* src = "dfbbn/sky130_fd_sc_hd__dfbbn.behavioral.v:0.0-0.0" *)
   wire VGND;
   (* src = "dfbbn/sky130_fd_sc_hd__dfbbn.behavioral.v:0.0-0.0" *)
@@ -5839,13 +5825,13 @@ module sky130_fd_sc_hd__dfbbn(Q, Q_N, D, CLK_N, SET_B, RESET_B);
   wire notifier;
   assign _00_ = cond0 & (* src = "dfbbn/sky130_fd_sc_hd__dfbbn.behavioral.v:83.22-83.35" *) cond1;
   assign _01_ = VPWR === (* src = "dfbbn/sky130_fd_sc_hd__dfbbn.behavioral.v:80.22-80.35" *) 1'h1;
-  assign _02_ = RESET_B_delayed === (* src = "dfbbn/sky130_fd_sc_hd__dfbbn.behavioral.v:81.33-81.57" *) 1'h1;
-  assign _03_ = SET_B_delayed === (* src = "dfbbn/sky130_fd_sc_hd__dfbbn.behavioral.v:82.33-82.55" *) 1'h1;
+  assign _02_ = RESET_B === (* src = "dfbbn/sky130_fd_sc_hd__dfbbn.behavioral.v:81.33-81.57" *) 1'h1;
+  assign _03_ = SET_B === (* src = "dfbbn/sky130_fd_sc_hd__dfbbn.behavioral.v:82.33-82.55" *) 1'h1;
   assign _04_ = awake && (* src = "dfbbn/sky130_fd_sc_hd__dfbbn.behavioral.v:81.22-81.59" *) _02_;
   assign _05_ = awake && (* src = "dfbbn/sky130_fd_sc_hd__dfbbn.behavioral.v:82.22-82.57" *) _03_;
-  assign _06_ = ~ (* src = "dfbbn/sky130_fd_sc_hd__dfbbn.behavioral.v:0.0-0.0" *) RESET_B_delayed;
-  assign _07_ = ~ (* src = "dfbbn/sky130_fd_sc_hd__dfbbn.behavioral.v:0.0-0.0" *) SET_B_delayed;
-  assign _08_ = ~ (* src = "dfbbn/sky130_fd_sc_hd__dfbbn.behavioral.v:0.0-0.0" *) CLK_N_delayed;
+  assign _06_ = ~ (* src = "dfbbn/sky130_fd_sc_hd__dfbbn.behavioral.v:0.0-0.0" *) RESET_B;
+  assign _07_ = ~ (* src = "dfbbn/sky130_fd_sc_hd__dfbbn.behavioral.v:0.0-0.0" *) SET_B;
+  assign _08_ = ~ (* src = "dfbbn/sky130_fd_sc_hd__dfbbn.behavioral.v:0.0-0.0" *) CLK_N;
   assign _09_ = ~ (* src = "dfbbn/sky130_fd_sc_hd__dfbbn.behavioral.v:0.0-0.0" *) buf_Q;
   (* module_not_derived = 32'd1 *)
   (* src = "dfbbn/sky130_fd_sc_hd__dfbbn.behavioral.v:79.42-79.105" *)
@@ -5854,7 +5840,7 @@ module sky130_fd_sc_hd__dfbbn(Q, Q_N, D, CLK_N, SET_B, RESET_B);
     SET,
     RESET,
     CLK,
-    D_delayed,
+    D,
     notifier,
     VPWR,
     VGND
@@ -5976,11 +5962,11 @@ module sky130_fd_sc_hd__dfbbp(Q, Q_N, D, CLK, SET_B, RESET_B);
   (* src = "dfbbp/sky130_fd_sc_hd__dfbbp.behavioral.v:50.12-50.15" *)
   input CLK;
   (* src = "dfbbp/sky130_fd_sc_hd__dfbbp.behavioral.v:64.10-64.21" *)
-  wire CLK_delayed;
+  wire CLK;
   (* src = "dfbbp/sky130_fd_sc_hd__dfbbp.behavioral.v:49.12-49.13" *)
   input D;
   (* src = "dfbbp/sky130_fd_sc_hd__dfbbp.behavioral.v:68.10-68.19" *)
-  wire D_delayed;
+  wire D;
   (* src = "dfbbp/sky130_fd_sc_hd__dfbbp.behavioral.v:47.12-47.13" *)
   output Q;
   (* src = "dfbbp/sky130_fd_sc_hd__dfbbp.behavioral.v:48.12-48.15" *)
@@ -5990,13 +5976,13 @@ module sky130_fd_sc_hd__dfbbp(Q, Q_N, D, CLK, SET_B, RESET_B);
   (* src = "dfbbp/sky130_fd_sc_hd__dfbbp.behavioral.v:52.12-52.19" *)
   input RESET_B;
   (* src = "dfbbp/sky130_fd_sc_hd__dfbbp.behavioral.v:65.10-65.25" *)
-  wire RESET_B_delayed;
+  wire RESET_B;
   (* src = "dfbbp/sky130_fd_sc_hd__dfbbp.behavioral.v:62.10-62.13" *)
   wire SET;
   (* src = "dfbbp/sky130_fd_sc_hd__dfbbp.behavioral.v:51.12-51.17" *)
   input SET_B;
   (* src = "dfbbp/sky130_fd_sc_hd__dfbbp.behavioral.v:66.10-66.23" *)
-  wire SET_B_delayed;
+  wire SET_B;
   (* src = "dfbbp/sky130_fd_sc_hd__dfbbp.behavioral.v:0.0-0.0" *)
   wire VGND;
   (* src = "dfbbp/sky130_fd_sc_hd__dfbbp.behavioral.v:0.0-0.0" *)
@@ -6019,12 +6005,12 @@ module sky130_fd_sc_hd__dfbbp(Q, Q_N, D, CLK, SET_B, RESET_B);
   wire notifier;
   assign _00_ = cond0 & (* src = "dfbbp/sky130_fd_sc_hd__dfbbp.behavioral.v:81.22-81.35" *) cond1;
   assign _01_ = VPWR === (* src = "dfbbp/sky130_fd_sc_hd__dfbbp.behavioral.v:78.22-78.35" *) 1'h1;
-  assign _02_ = RESET_B_delayed === (* src = "dfbbp/sky130_fd_sc_hd__dfbbp.behavioral.v:79.33-79.57" *) 1'h1;
-  assign _03_ = SET_B_delayed === (* src = "dfbbp/sky130_fd_sc_hd__dfbbp.behavioral.v:80.33-80.55" *) 1'h1;
+  assign _02_ = RESET_B === (* src = "dfbbp/sky130_fd_sc_hd__dfbbp.behavioral.v:79.33-79.57" *) 1'h1;
+  assign _03_ = SET_B === (* src = "dfbbp/sky130_fd_sc_hd__dfbbp.behavioral.v:80.33-80.55" *) 1'h1;
   assign _04_ = awake && (* src = "dfbbp/sky130_fd_sc_hd__dfbbp.behavioral.v:79.22-79.59" *) _02_;
   assign _05_ = awake && (* src = "dfbbp/sky130_fd_sc_hd__dfbbp.behavioral.v:80.22-80.57" *) _03_;
-  assign _06_ = ~ (* src = "dfbbp/sky130_fd_sc_hd__dfbbp.behavioral.v:0.0-0.0" *) RESET_B_delayed;
-  assign _07_ = ~ (* src = "dfbbp/sky130_fd_sc_hd__dfbbp.behavioral.v:0.0-0.0" *) SET_B_delayed;
+  assign _06_ = ~ (* src = "dfbbp/sky130_fd_sc_hd__dfbbp.behavioral.v:0.0-0.0" *) RESET_B;
+  assign _07_ = ~ (* src = "dfbbp/sky130_fd_sc_hd__dfbbp.behavioral.v:0.0-0.0" *) SET_B;
   assign _08_ = ~ (* src = "dfbbp/sky130_fd_sc_hd__dfbbp.behavioral.v:0.0-0.0" *) buf_Q;
   (* module_not_derived = 32'd1 *)
   (* src = "dfbbp/sky130_fd_sc_hd__dfbbp.behavioral.v:77.42-77.113" *)
@@ -6032,8 +6018,8 @@ module sky130_fd_sc_hd__dfbbp(Q, Q_N, D, CLK, SET_B, RESET_B);
     buf_Q,
     SET,
     RESET,
-    CLK_delayed,
-    D_delayed,
+    CLK,
+    D,
     notifier,
     VPWR,
     VGND
@@ -6109,11 +6095,11 @@ module sky130_fd_sc_hd__dfrbp(Q, Q_N, CLK, D, RESET_B);
   (* src = "dfrbp/sky130_fd_sc_hd__dfrbp.behavioral.v:47.12-47.15" *)
   input CLK;
   (* src = "dfrbp/sky130_fd_sc_hd__dfrbp.behavioral.v:63.10-63.21" *)
-  wire CLK_delayed;
+  wire CLK;
   (* src = "dfrbp/sky130_fd_sc_hd__dfrbp.behavioral.v:48.12-48.13" *)
   input D;
   (* src = "dfrbp/sky130_fd_sc_hd__dfrbp.behavioral.v:61.10-61.19" *)
-  wire D_delayed;
+  wire D;
   (* src = "dfrbp/sky130_fd_sc_hd__dfrbp.behavioral.v:45.12-45.13" *)
   output Q;
   (* src = "dfrbp/sky130_fd_sc_hd__dfrbp.behavioral.v:46.12-46.15" *)
@@ -6123,7 +6109,7 @@ module sky130_fd_sc_hd__dfrbp(Q, Q_N, CLK, D, RESET_B);
   (* src = "dfrbp/sky130_fd_sc_hd__dfrbp.behavioral.v:49.12-49.19" *)
   input RESET_B;
   (* src = "dfrbp/sky130_fd_sc_hd__dfrbp.behavioral.v:62.10-62.25" *)
-  wire RESET_B_delayed;
+  wire RESET_B;
   (* src = "dfrbp/sky130_fd_sc_hd__dfrbp.behavioral.v:0.0-0.0" *)
   wire VGND;
   (* src = "dfrbp/sky130_fd_sc_hd__dfrbp.behavioral.v:0.0-0.0" *)
@@ -6142,18 +6128,18 @@ module sky130_fd_sc_hd__dfrbp(Q, Q_N, CLK, D, RESET_B);
   wire cond1;
   (* src = "dfrbp/sky130_fd_sc_hd__dfrbp.behavioral.v:60.10-60.18" *)
   wire notifier;
-  assign _00_ = RESET_B_delayed === (* src = "dfrbp/sky130_fd_sc_hd__dfrbp.behavioral.v:71.33-71.57" *) 1'h1;
+  assign _00_ = RESET_B === (* src = "dfrbp/sky130_fd_sc_hd__dfrbp.behavioral.v:71.33-71.57" *) 1'h1;
   assign _01_ = RESET_B === (* src = "dfrbp/sky130_fd_sc_hd__dfrbp.behavioral.v:72.33-72.49" *) 1'h1;
   assign _02_ = awake && (* src = "dfrbp/sky130_fd_sc_hd__dfrbp.behavioral.v:71.22-71.59" *) _00_;
   assign _03_ = awake && (* src = "dfrbp/sky130_fd_sc_hd__dfrbp.behavioral.v:72.22-72.51" *) _01_;
-  assign _04_ = ~ (* src = "dfrbp/sky130_fd_sc_hd__dfrbp.behavioral.v:0.0-0.0" *) RESET_B_delayed;
+  assign _04_ = ~ (* src = "dfrbp/sky130_fd_sc_hd__dfrbp.behavioral.v:0.0-0.0" *) RESET_B;
   assign _05_ = ~ (* src = "dfrbp/sky130_fd_sc_hd__dfrbp.behavioral.v:0.0-0.0" *) buf_Q;
   (* module_not_derived = 32'd1 *)
   (* src = "dfrbp/sky130_fd_sc_hd__dfrbp.behavioral.v:70.41-70.107" *)
   \sky130_fd_sc_hd__udp_dff$PR_pp$PG$N  dff0 (
     buf_Q,
-    D_delayed,
-    CLK_delayed,
+    D,
+    CLK,
     RESET,
     notifier,
     VPWR,
@@ -6262,11 +6248,11 @@ module sky130_fd_sc_hd__dfrtn(Q, CLK_N, D, RESET_B);
   (* src = "dfrtn/sky130_fd_sc_hd__dfrtn.behavioral.v:46.12-46.17" *)
   input CLK_N;
   (* src = "dfrtn/sky130_fd_sc_hd__dfrtn.behavioral.v:63.10-63.23" *)
-  wire CLK_N_delayed;
+  wire CLK_N;
   (* src = "dfrtn/sky130_fd_sc_hd__dfrtn.behavioral.v:47.12-47.13" *)
   input D;
   (* src = "dfrtn/sky130_fd_sc_hd__dfrtn.behavioral.v:61.10-61.19" *)
-  wire D_delayed;
+  wire D;
   (* src = "dfrtn/sky130_fd_sc_hd__dfrtn.behavioral.v:45.12-45.13" *)
   output Q;
   (* src = "dfrtn/sky130_fd_sc_hd__dfrtn.behavioral.v:58.10-58.15" *)
@@ -6274,7 +6260,7 @@ module sky130_fd_sc_hd__dfrtn(Q, CLK_N, D, RESET_B);
   (* src = "dfrtn/sky130_fd_sc_hd__dfrtn.behavioral.v:48.12-48.19" *)
   input RESET_B;
   (* src = "dfrtn/sky130_fd_sc_hd__dfrtn.behavioral.v:62.10-62.25" *)
-  wire RESET_B_delayed;
+  wire RESET_B;
   (* src = "dfrtn/sky130_fd_sc_hd__dfrtn.behavioral.v:0.0-0.0" *)
   wire VGND;
   (* src = "dfrtn/sky130_fd_sc_hd__dfrtn.behavioral.v:0.0-0.0" *)
@@ -6296,17 +6282,17 @@ module sky130_fd_sc_hd__dfrtn(Q, CLK_N, D, RESET_B);
   (* src = "dfrtn/sky130_fd_sc_hd__dfrtn.behavioral.v:60.10-60.18" *)
   wire notifier;
   assign _00_ = VPWR === (* src = "dfrtn/sky130_fd_sc_hd__dfrtn.behavioral.v:72.22-72.35" *) 1'h1;
-  assign _01_ = RESET_B_delayed === (* src = "dfrtn/sky130_fd_sc_hd__dfrtn.behavioral.v:73.33-73.57" *) 1'h1;
+  assign _01_ = RESET_B === (* src = "dfrtn/sky130_fd_sc_hd__dfrtn.behavioral.v:73.33-73.57" *) 1'h1;
   assign _02_ = RESET_B === (* src = "dfrtn/sky130_fd_sc_hd__dfrtn.behavioral.v:74.33-74.49" *) 1'h1;
   assign _03_ = awake && (* src = "dfrtn/sky130_fd_sc_hd__dfrtn.behavioral.v:73.22-73.59" *) _01_;
   assign _04_ = awake && (* src = "dfrtn/sky130_fd_sc_hd__dfrtn.behavioral.v:74.22-74.51" *) _02_;
-  assign _05_ = ~ (* src = "dfrtn/sky130_fd_sc_hd__dfrtn.behavioral.v:0.0-0.0" *) RESET_B_delayed;
-  assign _06_ = ~ (* src = "dfrtn/sky130_fd_sc_hd__dfrtn.behavioral.v:0.0-0.0" *) CLK_N_delayed;
+  assign _05_ = ~ (* src = "dfrtn/sky130_fd_sc_hd__dfrtn.behavioral.v:0.0-0.0" *) RESET_B;
+  assign _06_ = ~ (* src = "dfrtn/sky130_fd_sc_hd__dfrtn.behavioral.v:0.0-0.0" *) CLK_N;
   (* module_not_derived = 32'd1 *)
   (* src = "dfrtn/sky130_fd_sc_hd__dfrtn.behavioral.v:71.41-71.102" *)
   \sky130_fd_sc_hd__udp_dff$PR_pp$PG$N  dff0 (
     buf_Q,
-    D_delayed,
+    D,
     intclk,
     RESET,
     notifier,
@@ -6376,11 +6362,11 @@ module sky130_fd_sc_hd__dfrtp(Q, CLK, D, RESET_B);
   (* src = "dfrtp/sky130_fd_sc_hd__dfrtp.behavioral.v:45.12-45.15" *)
   input CLK;
   (* src = "dfrtp/sky130_fd_sc_hd__dfrtp.behavioral.v:61.10-61.21" *)
-  wire CLK_delayed;
+  wire CLK;
   (* src = "dfrtp/sky130_fd_sc_hd__dfrtp.behavioral.v:46.12-46.13" *)
   input D;
   (* src = "dfrtp/sky130_fd_sc_hd__dfrtp.behavioral.v:59.10-59.19" *)
-  wire D_delayed;
+  wire D;
   (* src = "dfrtp/sky130_fd_sc_hd__dfrtp.behavioral.v:44.12-44.13" *)
   output Q;
   (* src = "dfrtp/sky130_fd_sc_hd__dfrtp.behavioral.v:57.10-57.15" *)
@@ -6388,7 +6374,7 @@ module sky130_fd_sc_hd__dfrtp(Q, CLK, D, RESET_B);
   (* src = "dfrtp/sky130_fd_sc_hd__dfrtp.behavioral.v:47.12-47.19" *)
   input RESET_B;
   (* src = "dfrtp/sky130_fd_sc_hd__dfrtp.behavioral.v:60.10-60.25" *)
-  wire RESET_B_delayed;
+  wire RESET_B;
   (* src = "dfrtp/sky130_fd_sc_hd__dfrtp.behavioral.v:0.0-0.0" *)
   wire VGND;
   (* src = "dfrtp/sky130_fd_sc_hd__dfrtp.behavioral.v:0.0-0.0" *)
@@ -6408,17 +6394,17 @@ module sky130_fd_sc_hd__dfrtp(Q, CLK, D, RESET_B);
   (* src = "dfrtp/sky130_fd_sc_hd__dfrtp.behavioral.v:58.10-58.18" *)
   wire notifier;
   assign _00_ = VPWR === (* src = "dfrtp/sky130_fd_sc_hd__dfrtp.behavioral.v:69.22-69.35" *) 1'h1;
-  assign _01_ = RESET_B_delayed === (* src = "dfrtp/sky130_fd_sc_hd__dfrtp.behavioral.v:70.33-70.57" *) 1'h1;
+  assign _01_ = RESET_B === (* src = "dfrtp/sky130_fd_sc_hd__dfrtp.behavioral.v:70.33-70.57" *) 1'h1;
   assign _02_ = RESET_B === (* src = "dfrtp/sky130_fd_sc_hd__dfrtp.behavioral.v:71.33-71.49" *) 1'h1;
   assign _03_ = awake && (* src = "dfrtp/sky130_fd_sc_hd__dfrtp.behavioral.v:70.22-70.59" *) _01_;
   assign _04_ = awake && (* src = "dfrtp/sky130_fd_sc_hd__dfrtp.behavioral.v:71.22-71.51" *) _02_;
-  assign _05_ = ~ (* src = "dfrtp/sky130_fd_sc_hd__dfrtp.behavioral.v:0.0-0.0" *) RESET_B_delayed;
+  assign _05_ = ~ (* src = "dfrtp/sky130_fd_sc_hd__dfrtp.behavioral.v:0.0-0.0" *) RESET_B;
   (* module_not_derived = 32'd1 *)
   (* src = "dfrtp/sky130_fd_sc_hd__dfrtp.behavioral.v:68.41-68.107" *)
   \sky130_fd_sc_hd__udp_dff$PR_pp$PG$N  dff0 (
     buf_Q,
-    D_delayed,
-    CLK_delayed,
+    D,
+    CLK,
     RESET,
     notifier,
     VPWR,
@@ -6550,11 +6536,11 @@ module sky130_fd_sc_hd__dfsbp(Q, Q_N, CLK, D, SET_B);
   (* src = "dfsbp/sky130_fd_sc_hd__dfsbp.behavioral.v:47.12-47.15" *)
   input CLK;
   (* src = "dfsbp/sky130_fd_sc_hd__dfsbp.behavioral.v:63.10-63.21" *)
-  wire CLK_delayed;
+  wire CLK;
   (* src = "dfsbp/sky130_fd_sc_hd__dfsbp.behavioral.v:48.12-48.13" *)
   input D;
   (* src = "dfsbp/sky130_fd_sc_hd__dfsbp.behavioral.v:61.10-61.19" *)
-  wire D_delayed;
+  wire D;
   (* src = "dfsbp/sky130_fd_sc_hd__dfsbp.behavioral.v:45.12-45.13" *)
   output Q;
   (* src = "dfsbp/sky130_fd_sc_hd__dfsbp.behavioral.v:46.12-46.15" *)
@@ -6564,7 +6550,7 @@ module sky130_fd_sc_hd__dfsbp(Q, Q_N, CLK, D, SET_B);
   (* src = "dfsbp/sky130_fd_sc_hd__dfsbp.behavioral.v:49.12-49.17" *)
   input SET_B;
   (* src = "dfsbp/sky130_fd_sc_hd__dfsbp.behavioral.v:62.10-62.23" *)
-  wire SET_B_delayed;
+  wire SET_B;
   (* src = "dfsbp/sky130_fd_sc_hd__dfsbp.behavioral.v:0.0-0.0" *)
   wire VGND;
   (* src = "dfsbp/sky130_fd_sc_hd__dfsbp.behavioral.v:0.0-0.0" *)
@@ -6584,16 +6570,16 @@ module sky130_fd_sc_hd__dfsbp(Q, Q_N, CLK, D, SET_B);
   (* src = "dfsbp/sky130_fd_sc_hd__dfsbp.behavioral.v:60.10-60.18" *)
   wire notifier;
   assign _0_ = VPWR === (* src = "dfsbp/sky130_fd_sc_hd__dfsbp.behavioral.v:71.22-71.35" *) 1'h1;
-  assign _1_ = SET_B_delayed === (* src = "dfsbp/sky130_fd_sc_hd__dfsbp.behavioral.v:72.22-72.44" *) 1'h1;
+  assign _1_ = SET_B === (* src = "dfsbp/sky130_fd_sc_hd__dfsbp.behavioral.v:72.22-72.44" *) 1'h1;
   assign _2_ = SET_B === (* src = "dfsbp/sky130_fd_sc_hd__dfsbp.behavioral.v:73.22-73.36" *) 1'h1;
-  assign _3_ = ~ (* src = "dfsbp/sky130_fd_sc_hd__dfsbp.behavioral.v:0.0-0.0" *) SET_B_delayed;
+  assign _3_ = ~ (* src = "dfsbp/sky130_fd_sc_hd__dfsbp.behavioral.v:0.0-0.0" *) SET_B;
   assign _4_ = ~ (* src = "dfsbp/sky130_fd_sc_hd__dfsbp.behavioral.v:0.0-0.0" *) buf_Q;
   (* module_not_derived = 32'd1 *)
   (* src = "dfsbp/sky130_fd_sc_hd__dfsbp.behavioral.v:70.41-70.105" *)
   \sky130_fd_sc_hd__udp_dff$PS_pp$PG$N  dff0 (
     buf_Q,
-    D_delayed,
-    CLK_delayed,
+    D,
+    CLK,
     SET,
     notifier,
     VPWR,
@@ -6697,11 +6683,11 @@ module sky130_fd_sc_hd__dfstp(Q, CLK, D, SET_B);
   (* src = "dfstp/sky130_fd_sc_hd__dfstp.behavioral.v:45.12-45.15" *)
   input CLK;
   (* src = "dfstp/sky130_fd_sc_hd__dfstp.behavioral.v:61.10-61.21" *)
-  wire CLK_delayed;
+  wire CLK;
   (* src = "dfstp/sky130_fd_sc_hd__dfstp.behavioral.v:46.12-46.13" *)
   input D;
   (* src = "dfstp/sky130_fd_sc_hd__dfstp.behavioral.v:59.10-59.19" *)
-  wire D_delayed;
+  wire D;
   (* src = "dfstp/sky130_fd_sc_hd__dfstp.behavioral.v:44.12-44.13" *)
   output Q;
   (* src = "dfstp/sky130_fd_sc_hd__dfstp.behavioral.v:57.10-57.13" *)
@@ -6709,7 +6695,7 @@ module sky130_fd_sc_hd__dfstp(Q, CLK, D, SET_B);
   (* src = "dfstp/sky130_fd_sc_hd__dfstp.behavioral.v:47.12-47.17" *)
   input SET_B;
   (* src = "dfstp/sky130_fd_sc_hd__dfstp.behavioral.v:60.10-60.23" *)
-  wire SET_B_delayed;
+  wire SET_B;
   (* src = "dfstp/sky130_fd_sc_hd__dfstp.behavioral.v:0.0-0.0" *)
   wire VGND;
   (* src = "dfstp/sky130_fd_sc_hd__dfstp.behavioral.v:0.0-0.0" *)
@@ -6729,15 +6715,15 @@ module sky130_fd_sc_hd__dfstp(Q, CLK, D, SET_B);
   (* src = "dfstp/sky130_fd_sc_hd__dfstp.behavioral.v:58.10-58.18" *)
   wire notifier;
   assign _0_ = VPWR === (* src = "dfstp/sky130_fd_sc_hd__dfstp.behavioral.v:69.22-69.35" *) 1'h1;
-  assign _1_ = SET_B_delayed === (* src = "dfstp/sky130_fd_sc_hd__dfstp.behavioral.v:70.22-70.44" *) 1'h1;
+  assign _1_ = SET_B === (* src = "dfstp/sky130_fd_sc_hd__dfstp.behavioral.v:70.22-70.44" *) 1'h1;
   assign _2_ = SET_B === (* src = "dfstp/sky130_fd_sc_hd__dfstp.behavioral.v:71.22-71.36" *) 1'h1;
-  assign _3_ = ~ (* src = "dfstp/sky130_fd_sc_hd__dfstp.behavioral.v:0.0-0.0" *) SET_B_delayed;
+  assign _3_ = ~ (* src = "dfstp/sky130_fd_sc_hd__dfstp.behavioral.v:0.0-0.0" *) SET_B;
   (* module_not_derived = 32'd1 *)
   (* src = "dfstp/sky130_fd_sc_hd__dfstp.behavioral.v:68.41-68.105" *)
   \sky130_fd_sc_hd__udp_dff$PS_pp$PG$N  dff0 (
     buf_Q,
-    D_delayed,
-    CLK_delayed,
+    D,
+    CLK,
     SET,
     notifier,
     VPWR,
@@ -6863,11 +6849,11 @@ module sky130_fd_sc_hd__dfxbp(Q, Q_N, CLK, D);
   (* src = "dfxbp/sky130_fd_sc_hd__dfxbp.behavioral.v:46.12-46.15" *)
   input CLK;
   (* src = "dfxbp/sky130_fd_sc_hd__dfxbp.behavioral.v:59.10-59.21" *)
-  wire CLK_delayed;
+  wire CLK;
   (* src = "dfxbp/sky130_fd_sc_hd__dfxbp.behavioral.v:47.12-47.13" *)
   input D;
   (* src = "dfxbp/sky130_fd_sc_hd__dfxbp.behavioral.v:58.10-58.19" *)
-  wire D_delayed;
+  wire D;
   (* src = "dfxbp/sky130_fd_sc_hd__dfxbp.behavioral.v:44.12-44.13" *)
   output Q;
   (* src = "dfxbp/sky130_fd_sc_hd__dfxbp.behavioral.v:45.12-45.15" *)
@@ -6892,8 +6878,8 @@ module sky130_fd_sc_hd__dfxbp(Q, Q_N, CLK, D);
   (* src = "dfxbp/sky130_fd_sc_hd__dfxbp.behavioral.v:63.40-63.99" *)
   \sky130_fd_sc_hd__udp_dff$P_pp$PG$N  dff0 (
     buf_Q,
-    D_delayed,
-    CLK_delayed,
+    D,
+    CLK,
     notifier,
     VPWR,
     VGND
@@ -6981,11 +6967,11 @@ module sky130_fd_sc_hd__dfxtp(Q, CLK, D);
   (* src = "dfxtp/sky130_fd_sc_hd__dfxtp.behavioral.v:44.12-44.15" *)
   input CLK;
   (* src = "dfxtp/sky130_fd_sc_hd__dfxtp.behavioral.v:57.10-57.21" *)
-  wire CLK_delayed;
+  wire CLK;
   (* src = "dfxtp/sky130_fd_sc_hd__dfxtp.behavioral.v:45.12-45.13" *)
   input D;
   (* src = "dfxtp/sky130_fd_sc_hd__dfxtp.behavioral.v:56.10-56.19" *)
-  wire D_delayed;
+  wire D;
   (* src = "dfxtp/sky130_fd_sc_hd__dfxtp.behavioral.v:43.12-43.13" *)
   output Q;
   (* src = "dfxtp/sky130_fd_sc_hd__dfxtp.behavioral.v:0.0-0.0" *)
@@ -7007,8 +6993,8 @@ module sky130_fd_sc_hd__dfxtp(Q, CLK, D);
   (* src = "dfxtp/sky130_fd_sc_hd__dfxtp.behavioral.v:61.40-61.99" *)
   \sky130_fd_sc_hd__udp_dff$P_pp$PG$N  dff0 (
     buf_Q,
-    D_delayed,
-    CLK_delayed,
+    D,
+    CLK,
     notifier,
     VPWR,
     VGND
@@ -7166,11 +7152,11 @@ module sky130_fd_sc_hd__dlclkp(GCLK, GATE, CLK);
   (* src = "dlclkp/sky130_fd_sc_hd__dlclkp.behavioral.v:45.12-45.15" *)
   input CLK;
   (* src = "dlclkp/sky130_fd_sc_hd__dlclkp.behavioral.v:56.10-56.21" *)
-  wire CLK_delayed;
+  wire CLK;
   (* src = "dlclkp/sky130_fd_sc_hd__dlclkp.behavioral.v:44.12-44.16" *)
   input GATE;
   (* src = "dlclkp/sky130_fd_sc_hd__dlclkp.behavioral.v:57.10-57.22" *)
-  wire GATE_delayed;
+  wire GATE;
   (* src = "dlclkp/sky130_fd_sc_hd__dlclkp.behavioral.v:43.12-43.16" *)
   output GCLK;
   (* src = "dlclkp/sky130_fd_sc_hd__dlclkp.behavioral.v:0.0-0.0" *)
@@ -7189,14 +7175,14 @@ module sky130_fd_sc_hd__dlclkp(GCLK, GATE, CLK);
   wire m0;
   (* src = "dlclkp/sky130_fd_sc_hd__dlclkp.behavioral.v:58.10-58.18" *)
   wire notifier;
-  assign _0_ = m0 & (* src = "dlclkp/sky130_fd_sc_hd__dlclkp.behavioral.v:64.43-64.101" *) CLK_delayed;
+  assign _0_ = m0 & (* src = "dlclkp/sky130_fd_sc_hd__dlclkp.behavioral.v:64.43-64.101" *) CLK;
   assign _1_ = VPWR === (* src = "dlclkp/sky130_fd_sc_hd__dlclkp.behavioral.v:65.22-65.35" *) 1'h1;
-  assign _2_ = ~ (* src = "dlclkp/sky130_fd_sc_hd__dlclkp.behavioral.v:0.0-0.0" *) CLK_delayed;
+  assign _2_ = ~ (* src = "dlclkp/sky130_fd_sc_hd__dlclkp.behavioral.v:0.0-0.0" *) CLK;
   (* module_not_derived = 32'd1 *)
   (* src = "dlclkp/sky130_fd_sc_hd__dlclkp.behavioral.v:63.43-63.101" *)
   \sky130_fd_sc_hd__udp_dlatch$P_pp$PG$N  dlatch0 (
     m0,
-    GATE_delayed,
+    GATE,
     clkn,
     notifier,
     VPWR,
@@ -7323,11 +7309,11 @@ module sky130_fd_sc_hd__dlrbn(Q, Q_N, RESET_B, D, GATE_N);
   (* src = "dlrbn/sky130_fd_sc_hd__dlrbn.behavioral.v:49.12-49.13" *)
   input D;
   (* src = "dlrbn/sky130_fd_sc_hd__dlrbn.behavioral.v:62.10-62.19" *)
-  wire D_delayed;
+  wire D;
   (* src = "dlrbn/sky130_fd_sc_hd__dlrbn.behavioral.v:50.12-50.18" *)
   input GATE_N;
   (* src = "dlrbn/sky130_fd_sc_hd__dlrbn.behavioral.v:63.10-63.24" *)
-  wire GATE_N_delayed;
+  wire GATE_N;
   (* src = "dlrbn/sky130_fd_sc_hd__dlrbn.behavioral.v:46.12-46.13" *)
   output Q;
   (* src = "dlrbn/sky130_fd_sc_hd__dlrbn.behavioral.v:47.12-47.15" *)
@@ -7337,9 +7323,9 @@ module sky130_fd_sc_hd__dlrbn(Q, Q_N, RESET_B, D, GATE_N);
   (* src = "dlrbn/sky130_fd_sc_hd__dlrbn.behavioral.v:48.12-48.19" *)
   input RESET_B;
   (* src = "dlrbn/sky130_fd_sc_hd__dlrbn.behavioral.v:65.10-65.25" *)
-  wire RESET_B_delayed;
+  wire RESET_B;
   (* src = "dlrbn/sky130_fd_sc_hd__dlrbn.behavioral.v:64.10-64.23" *)
-  wire RESET_delayed;
+  wire RESET;
   (* src = "dlrbn/sky130_fd_sc_hd__dlrbn.behavioral.v:0.0-0.0" *)
   wire VGND;
   (* src = "dlrbn/sky130_fd_sc_hd__dlrbn.behavioral.v:0.0-0.0" *)
@@ -7361,18 +7347,18 @@ module sky130_fd_sc_hd__dlrbn(Q, Q_N, RESET_B, D, GATE_N);
   (* src = "dlrbn/sky130_fd_sc_hd__dlrbn.behavioral.v:61.10-61.18" *)
   wire notifier;
   assign _00_ = VPWR === (* src = "dlrbn/sky130_fd_sc_hd__dlrbn.behavioral.v:75.22-75.35" *) 1'h1;
-  assign _01_ = RESET_B_delayed === (* src = "dlrbn/sky130_fd_sc_hd__dlrbn.behavioral.v:76.33-76.57" *) 1'h1;
+  assign _01_ = RESET_B === (* src = "dlrbn/sky130_fd_sc_hd__dlrbn.behavioral.v:76.33-76.57" *) 1'h1;
   assign _02_ = RESET_B === (* src = "dlrbn/sky130_fd_sc_hd__dlrbn.behavioral.v:77.33-77.49" *) 1'h1;
   assign _03_ = awake && (* src = "dlrbn/sky130_fd_sc_hd__dlrbn.behavioral.v:76.22-76.59" *) _01_;
   assign _04_ = awake && (* src = "dlrbn/sky130_fd_sc_hd__dlrbn.behavioral.v:77.22-77.51" *) _02_;
-  assign _05_ = ~ (* src = "dlrbn/sky130_fd_sc_hd__dlrbn.behavioral.v:0.0-0.0" *) RESET_B_delayed;
-  assign _06_ = ~ (* src = "dlrbn/sky130_fd_sc_hd__dlrbn.behavioral.v:0.0-0.0" *) GATE_N_delayed;
+  assign _05_ = ~ (* src = "dlrbn/sky130_fd_sc_hd__dlrbn.behavioral.v:0.0-0.0" *) RESET_B;
+  assign _06_ = ~ (* src = "dlrbn/sky130_fd_sc_hd__dlrbn.behavioral.v:0.0-0.0" *) GATE_N;
   assign _07_ = ~ (* src = "dlrbn/sky130_fd_sc_hd__dlrbn.behavioral.v:0.0-0.0" *) buf_Q;
   (* module_not_derived = 32'd1 *)
   (* src = "dlrbn/sky130_fd_sc_hd__dlrbn.behavioral.v:74.44-74.110" *)
   \sky130_fd_sc_hd__udp_dlatch$PR_pp$PG$N  dlatch0 (
     buf_Q,
-    D_delayed,
+    D,
     intgate,
     RESET,
     notifier,
@@ -7484,11 +7470,11 @@ module sky130_fd_sc_hd__dlrbp(Q, Q_N, RESET_B, D, GATE);
   (* src = "dlrbp/sky130_fd_sc_hd__dlrbp.behavioral.v:49.12-49.13" *)
   input D;
   (* src = "dlrbp/sky130_fd_sc_hd__dlrbp.behavioral.v:61.10-61.19" *)
-  wire D_delayed;
+  wire D;
   (* src = "dlrbp/sky130_fd_sc_hd__dlrbp.behavioral.v:50.12-50.16" *)
   input GATE;
   (* src = "dlrbp/sky130_fd_sc_hd__dlrbp.behavioral.v:62.10-62.22" *)
-  wire GATE_delayed;
+  wire GATE;
   (* src = "dlrbp/sky130_fd_sc_hd__dlrbp.behavioral.v:46.12-46.13" *)
   output Q;
   (* src = "dlrbp/sky130_fd_sc_hd__dlrbp.behavioral.v:47.12-47.15" *)
@@ -7498,9 +7484,9 @@ module sky130_fd_sc_hd__dlrbp(Q, Q_N, RESET_B, D, GATE);
   (* src = "dlrbp/sky130_fd_sc_hd__dlrbp.behavioral.v:48.12-48.19" *)
   input RESET_B;
   (* src = "dlrbp/sky130_fd_sc_hd__dlrbp.behavioral.v:64.10-64.25" *)
-  wire RESET_B_delayed;
+  wire RESET_B;
   (* src = "dlrbp/sky130_fd_sc_hd__dlrbp.behavioral.v:63.10-63.23" *)
-  wire RESET_delayed;
+  wire RESET;
   (* src = "dlrbp/sky130_fd_sc_hd__dlrbp.behavioral.v:0.0-0.0" *)
   wire VGND;
   (* src = "dlrbp/sky130_fd_sc_hd__dlrbp.behavioral.v:0.0-0.0" *)
@@ -7520,18 +7506,18 @@ module sky130_fd_sc_hd__dlrbp(Q, Q_N, RESET_B, D, GATE);
   (* src = "dlrbp/sky130_fd_sc_hd__dlrbp.behavioral.v:60.10-60.18" *)
   wire notifier;
   assign _00_ = VPWR === (* src = "dlrbp/sky130_fd_sc_hd__dlrbp.behavioral.v:73.22-73.35" *) 1'h1;
-  assign _01_ = RESET_B_delayed === (* src = "dlrbp/sky130_fd_sc_hd__dlrbp.behavioral.v:74.33-74.57" *) 1'h1;
+  assign _01_ = RESET_B === (* src = "dlrbp/sky130_fd_sc_hd__dlrbp.behavioral.v:74.33-74.57" *) 1'h1;
   assign _02_ = RESET_B === (* src = "dlrbp/sky130_fd_sc_hd__dlrbp.behavioral.v:75.33-75.49" *) 1'h1;
   assign _03_ = awake && (* src = "dlrbp/sky130_fd_sc_hd__dlrbp.behavioral.v:74.22-74.59" *) _01_;
   assign _04_ = awake && (* src = "dlrbp/sky130_fd_sc_hd__dlrbp.behavioral.v:75.22-75.51" *) _02_;
-  assign _05_ = ~ (* src = "dlrbp/sky130_fd_sc_hd__dlrbp.behavioral.v:0.0-0.0" *) RESET_B_delayed;
+  assign _05_ = ~ (* src = "dlrbp/sky130_fd_sc_hd__dlrbp.behavioral.v:0.0-0.0" *) RESET_B;
   assign _06_ = ~ (* src = "dlrbp/sky130_fd_sc_hd__dlrbp.behavioral.v:0.0-0.0" *) buf_Q;
   (* module_not_derived = 32'd1 *)
   (* src = "dlrbp/sky130_fd_sc_hd__dlrbp.behavioral.v:72.44-72.114" *)
   \sky130_fd_sc_hd__udp_dlatch$PR_pp$PG$N  dlatch0 (
     buf_Q,
-    D_delayed,
-    GATE_delayed,
+    D,
+    GATE,
     RESET,
     notifier,
     VPWR,
@@ -7641,11 +7627,11 @@ module sky130_fd_sc_hd__dlrtn(Q, RESET_B, D, GATE_N);
   (* src = "dlrtn/sky130_fd_sc_hd__dlrtn.behavioral.v:46.12-46.13" *)
   input D;
   (* src = "dlrtn/sky130_fd_sc_hd__dlrtn.behavioral.v:59.10-59.19" *)
-  wire D_delayed;
+  wire D;
   (* src = "dlrtn/sky130_fd_sc_hd__dlrtn.behavioral.v:47.12-47.18" *)
   input GATE_N;
   (* src = "dlrtn/sky130_fd_sc_hd__dlrtn.behavioral.v:60.10-60.24" *)
-  wire GATE_N_delayed;
+  wire GATE_N;
   (* src = "dlrtn/sky130_fd_sc_hd__dlrtn.behavioral.v:44.12-44.13" *)
   output Q;
   (* src = "dlrtn/sky130_fd_sc_hd__dlrtn.behavioral.v:56.10-56.15" *)
@@ -7653,9 +7639,9 @@ module sky130_fd_sc_hd__dlrtn(Q, RESET_B, D, GATE_N);
   (* src = "dlrtn/sky130_fd_sc_hd__dlrtn.behavioral.v:45.12-45.19" *)
   input RESET_B;
   (* src = "dlrtn/sky130_fd_sc_hd__dlrtn.behavioral.v:62.10-62.25" *)
-  wire RESET_B_delayed;
+  wire RESET_B;
   (* src = "dlrtn/sky130_fd_sc_hd__dlrtn.behavioral.v:61.10-61.23" *)
-  wire RESET_delayed;
+  wire RESET;
   (* src = "dlrtn/sky130_fd_sc_hd__dlrtn.behavioral.v:0.0-0.0" *)
   wire VGND;
   (* src = "dlrtn/sky130_fd_sc_hd__dlrtn.behavioral.v:0.0-0.0" *)
@@ -7677,17 +7663,17 @@ module sky130_fd_sc_hd__dlrtn(Q, RESET_B, D, GATE_N);
   (* src = "dlrtn/sky130_fd_sc_hd__dlrtn.behavioral.v:58.10-58.18" *)
   wire notifier;
   assign _00_ = VPWR === (* src = "dlrtn/sky130_fd_sc_hd__dlrtn.behavioral.v:72.22-72.35" *) 1'h1;
-  assign _01_ = RESET_B_delayed === (* src = "dlrtn/sky130_fd_sc_hd__dlrtn.behavioral.v:73.33-73.57" *) 1'h1;
+  assign _01_ = RESET_B === (* src = "dlrtn/sky130_fd_sc_hd__dlrtn.behavioral.v:73.33-73.57" *) 1'h1;
   assign _02_ = RESET_B === (* src = "dlrtn/sky130_fd_sc_hd__dlrtn.behavioral.v:74.33-74.49" *) 1'h1;
   assign _03_ = awake && (* src = "dlrtn/sky130_fd_sc_hd__dlrtn.behavioral.v:73.22-73.59" *) _01_;
   assign _04_ = awake && (* src = "dlrtn/sky130_fd_sc_hd__dlrtn.behavioral.v:74.22-74.51" *) _02_;
-  assign _05_ = ~ (* src = "dlrtn/sky130_fd_sc_hd__dlrtn.behavioral.v:0.0-0.0" *) RESET_B_delayed;
-  assign _06_ = ~ (* src = "dlrtn/sky130_fd_sc_hd__dlrtn.behavioral.v:0.0-0.0" *) GATE_N_delayed;
+  assign _05_ = ~ (* src = "dlrtn/sky130_fd_sc_hd__dlrtn.behavioral.v:0.0-0.0" *) RESET_B;
+  assign _06_ = ~ (* src = "dlrtn/sky130_fd_sc_hd__dlrtn.behavioral.v:0.0-0.0" *) GATE_N;
   (* module_not_derived = 32'd1 *)
   (* src = "dlrtn/sky130_fd_sc_hd__dlrtn.behavioral.v:71.44-71.110" *)
   \sky130_fd_sc_hd__udp_dlatch$PR_pp$PG$N  dlatch0 (
     buf_Q,
-    D_delayed,
+    D,
     intgate,
     RESET,
     notifier,
@@ -7823,11 +7809,11 @@ module sky130_fd_sc_hd__dlrtp(Q, RESET_B, D, GATE);
   (* src = "dlrtp/sky130_fd_sc_hd__dlrtp.behavioral.v:47.12-47.13" *)
   input D;
   (* src = "dlrtp/sky130_fd_sc_hd__dlrtp.behavioral.v:59.10-59.19" *)
-  wire D_delayed;
+  wire D;
   (* src = "dlrtp/sky130_fd_sc_hd__dlrtp.behavioral.v:48.12-48.16" *)
   input GATE;
   (* src = "dlrtp/sky130_fd_sc_hd__dlrtp.behavioral.v:60.10-60.22" *)
-  wire GATE_delayed;
+  wire GATE;
   (* src = "dlrtp/sky130_fd_sc_hd__dlrtp.behavioral.v:45.12-45.13" *)
   output Q;
   (* src = "dlrtp/sky130_fd_sc_hd__dlrtp.behavioral.v:57.10-57.15" *)
@@ -7835,9 +7821,9 @@ module sky130_fd_sc_hd__dlrtp(Q, RESET_B, D, GATE);
   (* src = "dlrtp/sky130_fd_sc_hd__dlrtp.behavioral.v:46.12-46.19" *)
   input RESET_B;
   (* src = "dlrtp/sky130_fd_sc_hd__dlrtp.behavioral.v:62.10-62.25" *)
-  wire RESET_B_delayed;
+  wire RESET_B;
   (* src = "dlrtp/sky130_fd_sc_hd__dlrtp.behavioral.v:61.10-61.23" *)
-  wire RESET_delayed;
+  wire RESET;
   (* src = "dlrtp/sky130_fd_sc_hd__dlrtp.behavioral.v:0.0-0.0" *)
   wire VGND;
   (* src = "dlrtp/sky130_fd_sc_hd__dlrtp.behavioral.v:0.0-0.0" *)
@@ -7857,17 +7843,17 @@ module sky130_fd_sc_hd__dlrtp(Q, RESET_B, D, GATE);
   (* src = "dlrtp/sky130_fd_sc_hd__dlrtp.behavioral.v:58.10-58.18" *)
   wire notifier;
   assign _00_ = VPWR === (* src = "dlrtp/sky130_fd_sc_hd__dlrtp.behavioral.v:71.22-71.35" *) 1'h1;
-  assign _01_ = RESET_B_delayed === (* src = "dlrtp/sky130_fd_sc_hd__dlrtp.behavioral.v:72.33-72.57" *) 1'h1;
+  assign _01_ = RESET_B === (* src = "dlrtp/sky130_fd_sc_hd__dlrtp.behavioral.v:72.33-72.57" *) 1'h1;
   assign _02_ = RESET_B === (* src = "dlrtp/sky130_fd_sc_hd__dlrtp.behavioral.v:73.33-73.49" *) 1'h1;
   assign _03_ = awake && (* src = "dlrtp/sky130_fd_sc_hd__dlrtp.behavioral.v:72.22-72.59" *) _01_;
   assign _04_ = awake && (* src = "dlrtp/sky130_fd_sc_hd__dlrtp.behavioral.v:73.22-73.51" *) _02_;
-  assign _05_ = ~ (* src = "dlrtp/sky130_fd_sc_hd__dlrtp.behavioral.v:0.0-0.0" *) RESET_B_delayed;
+  assign _05_ = ~ (* src = "dlrtp/sky130_fd_sc_hd__dlrtp.behavioral.v:0.0-0.0" *) RESET_B;
   (* module_not_derived = 32'd1 *)
   (* src = "dlrtp/sky130_fd_sc_hd__dlrtp.behavioral.v:70.44-70.114" *)
   \sky130_fd_sc_hd__udp_dlatch$PR_pp$PG$N  dlatch0 (
     buf_Q,
-    D_delayed,
-    GATE_delayed,
+    D,
+    GATE,
     RESET,
     notifier,
     VPWR,
@@ -7995,13 +7981,13 @@ module sky130_fd_sc_hd__dlxbn(Q, Q_N, D, GATE_N);
   (* src = "dlxbn/sky130_fd_sc_hd__dlxbn.behavioral.v:46.12-46.13" *)
   input D;
   (* src = "dlxbn/sky130_fd_sc_hd__dlxbn.behavioral.v:59.10-59.19" *)
-  wire D_delayed;
+  wire D;
   (* src = "dlxbn/sky130_fd_sc_hd__dlxbn.behavioral.v:56.10-56.14" *)
   wire GATE;
   (* src = "dlxbn/sky130_fd_sc_hd__dlxbn.behavioral.v:47.12-47.18" *)
   input GATE_N;
   (* src = "dlxbn/sky130_fd_sc_hd__dlxbn.behavioral.v:58.10-58.24" *)
-  wire GATE_N_delayed;
+  wire GATE_N;
   (* src = "dlxbn/sky130_fd_sc_hd__dlxbn.behavioral.v:44.12-44.13" *)
   output Q;
   (* src = "dlxbn/sky130_fd_sc_hd__dlxbn.behavioral.v:45.12-45.15" *)
@@ -8020,14 +8006,14 @@ module sky130_fd_sc_hd__dlxbn(Q, Q_N, D, GATE_N);
   wire buf_Q;
   (* src = "dlxbn/sky130_fd_sc_hd__dlxbn.behavioral.v:60.10-60.18" *)
   wire notifier;
-  assign _0_ = VPWR === (* src = "dlxbn/sky130_fd_sc_hd__dlxbn.behavioral.v:67.22-67.32" *) 32'd1;
-  assign _1_ = ~ (* src = "dlxbn/sky130_fd_sc_hd__dlxbn.behavioral.v:0.0-0.0" *) GATE_N_delayed;
+  //assign _0_ = VPWR === (* src = "dlxbn/sky130_fd_sc_hd__dlxbn.behavioral.v:67.22-67.32" *) 32'd1;
+  assign _1_ = ~ (* src = "dlxbn/sky130_fd_sc_hd__dlxbn.behavioral.v:0.0-0.0" *) GATE_N;
   assign _2_ = ~ (* src = "dlxbn/sky130_fd_sc_hd__dlxbn.behavioral.v:0.0-0.0" *) buf_Q;
   (* module_not_derived = 32'd1 *)
   (* src = "dlxbn/sky130_fd_sc_hd__dlxbn.behavioral.v:66.43-66.98" *)
   \sky130_fd_sc_hd__udp_dlatch$P_pp$PG$N  dlatch0 (
     buf_Q,
-    D_delayed,
+    D,
     GATE,
     notifier,
     VPWR,
@@ -8038,7 +8024,7 @@ module sky130_fd_sc_hd__dlxbn(Q, Q_N, D, GATE_N);
   assign VPB = 1'h1;
   assign VNB = 1'h0;
   assign GATE = _1_;
-  assign awake = _0_;
+  assign awake = 1'h1;
   assign Q = buf_Q;
   assign Q_N = _2_;
 endmodule
@@ -8119,11 +8105,11 @@ module sky130_fd_sc_hd__dlxbp(Q, Q_N, D, GATE);
   (* src = "dlxbp/sky130_fd_sc_hd__dlxbp.behavioral.v:46.12-46.13" *)
   input D;
   (* src = "dlxbp/sky130_fd_sc_hd__dlxbp.behavioral.v:58.10-58.19" *)
-  wire D_delayed;
+  wire D;
   (* src = "dlxbp/sky130_fd_sc_hd__dlxbp.behavioral.v:47.12-47.16" *)
   input GATE;
   (* src = "dlxbp/sky130_fd_sc_hd__dlxbp.behavioral.v:57.10-57.22" *)
-  wire GATE_delayed;
+  wire GATE;
   (* src = "dlxbp/sky130_fd_sc_hd__dlxbp.behavioral.v:44.12-44.13" *)
   output Q;
   (* src = "dlxbp/sky130_fd_sc_hd__dlxbp.behavioral.v:45.12-45.15" *)
@@ -8148,8 +8134,8 @@ module sky130_fd_sc_hd__dlxbp(Q, Q_N, D, GATE);
   (* src = "dlxbp/sky130_fd_sc_hd__dlxbp.behavioral.v:63.43-63.106" *)
   \sky130_fd_sc_hd__udp_dlatch$P_pp$PG$N  dlatch0 (
     buf_Q,
-    D_delayed,
-    GATE_delayed,
+    D,
+    GATE,
     notifier,
     VPWR,
     VGND
@@ -8206,13 +8192,13 @@ module sky130_fd_sc_hd__dlxtn(Q, D, GATE_N);
   (* src = "dlxtn/sky130_fd_sc_hd__dlxtn.behavioral.v:44.12-44.13" *)
   input D;
   (* src = "dlxtn/sky130_fd_sc_hd__dlxtn.behavioral.v:57.10-57.19" *)
-  wire D_delayed;
+  wire D;
   (* src = "dlxtn/sky130_fd_sc_hd__dlxtn.behavioral.v:54.10-54.14" *)
   wire GATE;
   (* src = "dlxtn/sky130_fd_sc_hd__dlxtn.behavioral.v:45.12-45.18" *)
   input GATE_N;
   (* src = "dlxtn/sky130_fd_sc_hd__dlxtn.behavioral.v:56.10-56.24" *)
-  wire GATE_N_delayed;
+  wire GATE_N;
   (* src = "dlxtn/sky130_fd_sc_hd__dlxtn.behavioral.v:43.12-43.13" *)
   output Q;
   (* src = "dlxtn/sky130_fd_sc_hd__dlxtn.behavioral.v:0.0-0.0" *)
@@ -8230,12 +8216,12 @@ module sky130_fd_sc_hd__dlxtn(Q, D, GATE_N);
   (* src = "dlxtn/sky130_fd_sc_hd__dlxtn.behavioral.v:58.10-58.18" *)
   wire notifier;
   assign _0_ = VPWR === (* src = "dlxtn/sky130_fd_sc_hd__dlxtn.behavioral.v:65.22-65.35" *) 1'h1;
-  assign _1_ = ~ (* src = "dlxtn/sky130_fd_sc_hd__dlxtn.behavioral.v:0.0-0.0" *) GATE_N_delayed;
+  assign _1_ = ~ (* src = "dlxtn/sky130_fd_sc_hd__dlxtn.behavioral.v:0.0-0.0" *) GATE_N;
   (* module_not_derived = 32'd1 *)
   (* src = "dlxtn/sky130_fd_sc_hd__dlxtn.behavioral.v:63.43-63.98" *)
   \sky130_fd_sc_hd__udp_dlatch$P_pp$PG$N  dlatch0 (
     buf_Q,
-    D_delayed,
+    D,
     GATE,
     notifier,
     VPWR,
@@ -8348,11 +8334,11 @@ module sky130_fd_sc_hd__dlxtp(Q, D, GATE);
   (* src = "dlxtp/sky130_fd_sc_hd__dlxtp.behavioral.v:44.12-44.13" *)
   input D;
   (* src = "dlxtp/sky130_fd_sc_hd__dlxtp.behavioral.v:56.10-56.19" *)
-  wire D_delayed;
+  wire D;
   (* src = "dlxtp/sky130_fd_sc_hd__dlxtp.behavioral.v:45.12-45.16" *)
   input GATE;
   (* src = "dlxtp/sky130_fd_sc_hd__dlxtp.behavioral.v:55.10-55.22" *)
-  wire GATE_delayed;
+  wire GATE;
   (* src = "dlxtp/sky130_fd_sc_hd__dlxtp.behavioral.v:43.12-43.13" *)
   output Q;
   (* src = "dlxtp/sky130_fd_sc_hd__dlxtp.behavioral.v:0.0-0.0" *)
@@ -8374,8 +8360,8 @@ module sky130_fd_sc_hd__dlxtp(Q, D, GATE);
   (* src = "dlxtp/sky130_fd_sc_hd__dlxtp.behavioral.v:61.43-61.106" *)
   \sky130_fd_sc_hd__udp_dlatch$P_pp$PG$N  dlatch0 (
     buf_Q,
-    D_delayed,
-    GATE_delayed,
+    D,
+    GATE,
     notifier,
     VPWR,
     VGND
@@ -8891,15 +8877,15 @@ module sky130_fd_sc_hd__edfxbp(Q, Q_N, CLK, D, DE);
   (* src = "edfxbp/sky130_fd_sc_hd__edfxbp.behavioral.v:49.12-49.15" *)
   input CLK;
   (* src = "edfxbp/sky130_fd_sc_hd__edfxbp.behavioral.v:64.10-64.21" *)
-  wire CLK_delayed;
+  wire CLK;
   (* src = "edfxbp/sky130_fd_sc_hd__edfxbp.behavioral.v:50.12-50.13" *)
   input D;
   (* src = "edfxbp/sky130_fd_sc_hd__edfxbp.behavioral.v:51.12-51.14" *)
   input DE;
   (* src = "edfxbp/sky130_fd_sc_hd__edfxbp.behavioral.v:63.10-63.20" *)
-  wire DE_delayed;
+  wire DE;
   (* src = "edfxbp/sky130_fd_sc_hd__edfxbp.behavioral.v:62.10-62.19" *)
-  wire D_delayed;
+  wire D;
   (* src = "edfxbp/sky130_fd_sc_hd__edfxbp.behavioral.v:47.12-47.13" *)
   output Q;
   (* src = "edfxbp/sky130_fd_sc_hd__edfxbp.behavioral.v:48.12-48.15" *)
@@ -8923,7 +8909,7 @@ module sky130_fd_sc_hd__edfxbp(Q, Q_N, CLK, D, DE);
   (* src = "edfxbp/sky130_fd_sc_hd__edfxbp.behavioral.v:61.10-61.18" *)
   wire notifier;
   assign _0_ = VPWR === (* src = "edfxbp/sky130_fd_sc_hd__edfxbp.behavioral.v:72.22-72.35" *) 1'h1;
-  assign _1_ = DE_delayed === (* src = "edfxbp/sky130_fd_sc_hd__edfxbp.behavioral.v:73.33-73.52" *) 1'h1;
+  assign _1_ = DE === (* src = "edfxbp/sky130_fd_sc_hd__edfxbp.behavioral.v:73.33-73.52" *) 1'h1;
   assign _2_ = awake && (* src = "edfxbp/sky130_fd_sc_hd__edfxbp.behavioral.v:73.22-73.54" *) _1_;
   assign _3_ = ~ (* src = "edfxbp/sky130_fd_sc_hd__edfxbp.behavioral.v:0.0-0.0" *) buf_Q;
   (* module_not_derived = 32'd1 *)
@@ -8931,7 +8917,7 @@ module sky130_fd_sc_hd__edfxbp(Q, Q_N, CLK, D, DE);
   \sky130_fd_sc_hd__udp_dff$P_pp$PG$N  dff0 (
     buf_Q,
     mux_out,
-    CLK_delayed,
+    CLK,
     notifier,
     VPWR,
     VGND
@@ -8941,8 +8927,8 @@ module sky130_fd_sc_hd__edfxbp(Q, Q_N, CLK, D, DE);
   sky130_fd_sc_hd__udp_mux_2to1 mux_2to10 (
     mux_out,
     buf_Q,
-    D_delayed,
-    DE_delayed
+    D,
+    DE
   );
   assign VPWR = 1'h1;
   assign VGND = 1'h0;
@@ -9002,15 +8988,15 @@ module sky130_fd_sc_hd__edfxtp(Q, CLK, D, DE);
   (* src = "edfxtp/sky130_fd_sc_hd__edfxtp.behavioral.v:47.12-47.15" *)
   input CLK;
   (* src = "edfxtp/sky130_fd_sc_hd__edfxtp.behavioral.v:62.10-62.21" *)
-  wire CLK_delayed;
+  wire CLK;
   (* src = "edfxtp/sky130_fd_sc_hd__edfxtp.behavioral.v:48.12-48.13" *)
   input D;
   (* src = "edfxtp/sky130_fd_sc_hd__edfxtp.behavioral.v:49.12-49.14" *)
   input DE;
   (* src = "edfxtp/sky130_fd_sc_hd__edfxtp.behavioral.v:61.10-61.20" *)
-  wire DE_delayed;
+  wire DE;
   (* src = "edfxtp/sky130_fd_sc_hd__edfxtp.behavioral.v:60.10-60.19" *)
-  wire D_delayed;
+  wire D;
   (* src = "edfxtp/sky130_fd_sc_hd__edfxtp.behavioral.v:46.12-46.13" *)
   output Q;
   (* src = "edfxtp/sky130_fd_sc_hd__edfxtp.behavioral.v:0.0-0.0" *)
@@ -9032,14 +9018,14 @@ module sky130_fd_sc_hd__edfxtp(Q, CLK, D, DE);
   (* src = "edfxtp/sky130_fd_sc_hd__edfxtp.behavioral.v:59.10-59.18" *)
   wire notifier;
   assign _0_ = VPWR === (* src = "edfxtp/sky130_fd_sc_hd__edfxtp.behavioral.v:70.22-70.35" *) 1'h1;
-  assign _1_ = DE_delayed === (* src = "edfxtp/sky130_fd_sc_hd__edfxtp.behavioral.v:71.33-71.52" *) 1'h1;
+  assign _1_ = DE === (* src = "edfxtp/sky130_fd_sc_hd__edfxtp.behavioral.v:71.33-71.52" *) 1'h1;
   assign _2_ = awake && (* src = "edfxtp/sky130_fd_sc_hd__edfxtp.behavioral.v:71.22-71.54" *) _1_;
   (* module_not_derived = 32'd1 *)
   (* src = "edfxtp/sky130_fd_sc_hd__edfxtp.behavioral.v:69.40-69.103" *)
   \sky130_fd_sc_hd__udp_dff$P_pp$PG$N  dff0 (
     buf_Q,
     mux_out,
-    CLK_delayed,
+    CLK,
     notifier,
     VPWR,
     VGND
@@ -9049,8 +9035,8 @@ module sky130_fd_sc_hd__edfxtp(Q, CLK, D, DE);
   sky130_fd_sc_hd__udp_mux_2to1 mux_2to10 (
     mux_out,
     buf_Q,
-    D_delayed,
-    DE_delayed
+    D,
+    DE
   );
   assign VPWR = 1'h1;
   assign VGND = 1'h0;
@@ -10341,24 +10327,7 @@ endmodule
 (* cells_not_processed =  1  *)
 (* src = "lpflow_bleeder/sky130_fd_sc_hd__lpflow_bleeder_1.v:68.1-84.10" *)
 module sky130_fd_sc_hd__lpflow_bleeder_1(SHORT);
-  (* src = "lpflow_bleeder/sky130_fd_sc_hd__lpflow_bleeder_1.v:72.11-72.16" *)
   input SHORT;
-  (* src = "lpflow_bleeder/sky130_fd_sc_hd__lpflow_bleeder_1.v:0.0-0.0" *)
-  wire VGND;
-  (* src = "lpflow_bleeder/sky130_fd_sc_hd__lpflow_bleeder_1.v:0.0-0.0" *)
-  wire VNB;
-  (* src = "lpflow_bleeder/sky130_fd_sc_hd__lpflow_bleeder_1.v:0.0-0.0" *)
-  wire VPB;
-  (* src = "lpflow_bleeder/sky130_fd_sc_hd__lpflow_bleeder_1.v:75.13-75.17" *)
-  wire VPWR;
-  (* module_not_derived = 32'd1 *)
-  (* src = "lpflow_bleeder/sky130_fd_sc_hd__lpflow_bleeder_1.v:80.37-82.6" *)
-  sky130_fd_sc_hd__lpflow_bleeder base (
-    .SHORT(SHORT)
-  );
-  assign VGND = 1'h0;
-  assign VPB = 1'h1;
-  assign VNB = 1'h0;
 endmodule
 
 (* cells_not_processed =  1  *)
@@ -10369,7 +10338,6 @@ module sky130_fd_sc_hd__lpflow_clkbufkapwr(X, A);
   (* src = "lpflow_clkbufkapwr/sky130_fd_sc_hd__lpflow_clkbufkapwr.behavioral.v:0.0-0.0" *)
   wire KAPWR;
   (* src = "lpflow_clkbufkapwr/sky130_fd_sc_hd__lpflow_clkbufkapwr.behavioral.v:0.0-0.0" *)
-  wire VGND;
   (* src = "lpflow_clkbufkapwr/sky130_fd_sc_hd__lpflow_clkbufkapwr.behavioral.v:0.0-0.0" *)
   wire VNB;
   (* src = "lpflow_clkbufkapwr/sky130_fd_sc_hd__lpflow_clkbufkapwr.behavioral.v:0.0-0.0" *)
@@ -10382,7 +10350,6 @@ module sky130_fd_sc_hd__lpflow_clkbufkapwr(X, A);
   wire buf0_out_X;
   assign KAPWR = 1'h1;
   assign VPWR = 1'h1;
-  assign VGND = 1'h0;
   assign VPB = 1'h1;
   assign VNB = 1'h0;
   assign buf0_out_X = A;
@@ -11022,13 +10989,13 @@ module sky130_fd_sc_hd__lpflow_inputisolatch(Q, D, SLEEP_B);
   (* src = "lpflow_inputisolatch/sky130_fd_sc_hd__lpflow_inputisolatch.behavioral.v:44.12-44.13" *)
   input D;
   (* src = "lpflow_inputisolatch/sky130_fd_sc_hd__lpflow_inputisolatch.behavioral.v:57.10-57.19" *)
-  wire D_delayed;
+  wire D;
   (* src = "lpflow_inputisolatch/sky130_fd_sc_hd__lpflow_inputisolatch.behavioral.v:43.12-43.13" *)
   output Q;
   (* src = "lpflow_inputisolatch/sky130_fd_sc_hd__lpflow_inputisolatch.behavioral.v:45.12-45.19" *)
   input SLEEP_B;
   (* src = "lpflow_inputisolatch/sky130_fd_sc_hd__lpflow_inputisolatch.behavioral.v:56.10-56.25" *)
-  wire SLEEP_B_delayed;
+  wire SLEEP_B;
   (* src = "lpflow_inputisolatch/sky130_fd_sc_hd__lpflow_inputisolatch.behavioral.v:0.0-0.0" *)
   wire VGND;
   (* src = "lpflow_inputisolatch/sky130_fd_sc_hd__lpflow_inputisolatch.behavioral.v:0.0-0.0" *)
@@ -11045,8 +11012,8 @@ module sky130_fd_sc_hd__lpflow_inputisolatch(Q, D, SLEEP_B);
   (* src = "lpflow_inputisolatch/sky130_fd_sc_hd__lpflow_inputisolatch.behavioral.v:60.44-60.110" *)
   \sky130_fd_sc_hd__udp_dlatch$lP_pp$PG$N  dlatch0 (
     buf_Q,
-    D_delayed,
-    SLEEP_B_delayed,
+    D,
+    SLEEP_B,
     notifier,
     VPWR,
     VGND
@@ -18860,11 +18827,11 @@ module sky130_fd_sc_hd__sdfbbn(Q, Q_N, D, SCD, SCE, CLK_N, SET_B, RESET_B);
   (* src = "sdfbbn/sky130_fd_sc_hd__sdfbbn.behavioral.v:55.12-55.17" *)
   input CLK_N;
   (* src = "sdfbbn/sky130_fd_sc_hd__sdfbbn.behavioral.v:74.10-74.23" *)
-  wire CLK_N_delayed;
+  wire CLK_N;
   (* src = "sdfbbn/sky130_fd_sc_hd__sdfbbn.behavioral.v:52.12-52.13" *)
   input D;
   (* src = "sdfbbn/sky130_fd_sc_hd__sdfbbn.behavioral.v:71.10-71.19" *)
-  wire D_delayed;
+  wire D;
   (* src = "sdfbbn/sky130_fd_sc_hd__sdfbbn.behavioral.v:50.12-50.13" *)
   output Q;
   (* src = "sdfbbn/sky130_fd_sc_hd__sdfbbn.behavioral.v:51.12-51.15" *)
@@ -18874,21 +18841,21 @@ module sky130_fd_sc_hd__sdfbbn(Q, Q_N, D, SCD, SCE, CLK_N, SET_B, RESET_B);
   (* src = "sdfbbn/sky130_fd_sc_hd__sdfbbn.behavioral.v:57.12-57.19" *)
   input RESET_B;
   (* src = "sdfbbn/sky130_fd_sc_hd__sdfbbn.behavioral.v:76.10-76.25" *)
-  wire RESET_B_delayed;
+  wire RESET_B;
   (* src = "sdfbbn/sky130_fd_sc_hd__sdfbbn.behavioral.v:53.12-53.15" *)
   input SCD;
   (* src = "sdfbbn/sky130_fd_sc_hd__sdfbbn.behavioral.v:72.10-72.21" *)
-  wire SCD_delayed;
+  wire SCD;
   (* src = "sdfbbn/sky130_fd_sc_hd__sdfbbn.behavioral.v:54.12-54.15" *)
   input SCE;
   (* src = "sdfbbn/sky130_fd_sc_hd__sdfbbn.behavioral.v:73.10-73.21" *)
-  wire SCE_delayed;
+  wire SCE;
   (* src = "sdfbbn/sky130_fd_sc_hd__sdfbbn.behavioral.v:67.10-67.13" *)
   wire SET;
   (* src = "sdfbbn/sky130_fd_sc_hd__sdfbbn.behavioral.v:56.12-56.17" *)
   input SET_B;
   (* src = "sdfbbn/sky130_fd_sc_hd__sdfbbn.behavioral.v:75.10-75.23" *)
-  wire SET_B_delayed;
+  wire SET_B;
   (* src = "sdfbbn/sky130_fd_sc_hd__sdfbbn.behavioral.v:0.0-0.0" *)
   wire VGND;
   (* src = "sdfbbn/sky130_fd_sc_hd__sdfbbn.behavioral.v:0.0-0.0" *)
@@ -18919,19 +18886,19 @@ module sky130_fd_sc_hd__sdfbbn(Q, Q_N, D, SCD, SCE, CLK_N, SET_B, RESET_B);
   wire notifier;
   assign _00_ = cond0 & (* src = "sdfbbn/sky130_fd_sc_hd__sdfbbn.behavioral.v:95.22-95.35" *) cond1;
   assign _01_ = VPWR === (* src = "sdfbbn/sky130_fd_sc_hd__sdfbbn.behavioral.v:92.22-92.35" *) 1'h1;
-  assign _02_ = RESET_B_delayed === (* src = "sdfbbn/sky130_fd_sc_hd__sdfbbn.behavioral.v:93.33-93.57" *) 1'h1;
-  assign _03_ = SET_B_delayed === (* src = "sdfbbn/sky130_fd_sc_hd__sdfbbn.behavioral.v:94.33-94.55" *) 1'h1;
-  assign _04_ = SCE_delayed === (* src = "sdfbbn/sky130_fd_sc_hd__sdfbbn.behavioral.v:96.25-96.45" *) 1'h0;
-  assign _05_ = SCE_delayed === (* src = "sdfbbn/sky130_fd_sc_hd__sdfbbn.behavioral.v:97.27-97.47" *) 1'h1;
+  assign _02_ = RESET_B === (* src = "sdfbbn/sky130_fd_sc_hd__sdfbbn.behavioral.v:93.33-93.57" *) 1'h1;
+  assign _03_ = SET_B === (* src = "sdfbbn/sky130_fd_sc_hd__sdfbbn.behavioral.v:94.33-94.55" *) 1'h1;
+  assign _04_ = SCE === (* src = "sdfbbn/sky130_fd_sc_hd__sdfbbn.behavioral.v:96.25-96.45" *) 1'h0;
+  assign _05_ = SCE === (* src = "sdfbbn/sky130_fd_sc_hd__sdfbbn.behavioral.v:97.27-97.47" *) 1'h1;
   assign _06_ = awake && (* src = "sdfbbn/sky130_fd_sc_hd__sdfbbn.behavioral.v:93.22-93.59" *) _02_;
   assign _07_ = awake && (* src = "sdfbbn/sky130_fd_sc_hd__sdfbbn.behavioral.v:94.22-94.57" *) _03_;
   assign _08_ = _04_ && (* src = "sdfbbn/sky130_fd_sc_hd__sdfbbn.behavioral.v:96.23-96.56" *) condb;
   assign _09_ = _05_ && (* src = "sdfbbn/sky130_fd_sc_hd__sdfbbn.behavioral.v:97.25-97.58" *) condb;
   assign _10_ = _11_ && (* src = "sdfbbn/sky130_fd_sc_hd__sdfbbn.behavioral.v:98.25-98.63" *) condb;
-  assign _11_ = D_delayed !== (* src = "sdfbbn/sky130_fd_sc_hd__sdfbbn.behavioral.v:98.27-98.52" *) SCD_delayed;
-  assign _12_ = ~ (* src = "sdfbbn/sky130_fd_sc_hd__sdfbbn.behavioral.v:0.0-0.0" *) RESET_B_delayed;
-  assign _13_ = ~ (* src = "sdfbbn/sky130_fd_sc_hd__sdfbbn.behavioral.v:0.0-0.0" *) SET_B_delayed;
-  assign _14_ = ~ (* src = "sdfbbn/sky130_fd_sc_hd__sdfbbn.behavioral.v:0.0-0.0" *) CLK_N_delayed;
+  assign _11_ = D !== (* src = "sdfbbn/sky130_fd_sc_hd__sdfbbn.behavioral.v:98.27-98.52" *) SCD;
+  assign _12_ = ~ (* src = "sdfbbn/sky130_fd_sc_hd__sdfbbn.behavioral.v:0.0-0.0" *) RESET_B;
+  assign _13_ = ~ (* src = "sdfbbn/sky130_fd_sc_hd__sdfbbn.behavioral.v:0.0-0.0" *) SET_B;
+  assign _14_ = ~ (* src = "sdfbbn/sky130_fd_sc_hd__sdfbbn.behavioral.v:0.0-0.0" *) CLK_N;
   assign _15_ = ~ (* src = "sdfbbn/sky130_fd_sc_hd__sdfbbn.behavioral.v:0.0-0.0" *) buf_Q;
   (* module_not_derived = 32'd1 *)
   (* src = "sdfbbn/sky130_fd_sc_hd__sdfbbn.behavioral.v:91.42-91.109" *)
@@ -18949,9 +18916,9 @@ module sky130_fd_sc_hd__sdfbbn(Q, Q_N, D, SCD, SCE, CLK_N, SET_B, RESET_B);
   (* src = "sdfbbn/sky130_fd_sc_hd__sdfbbn.behavioral.v:90.42-90.109" *)
   sky130_fd_sc_hd__udp_mux_2to1 mux_2to10 (
     mux_out,
-    D_delayed,
-    SCD_delayed,
-    SCE_delayed
+    D,
+    SCD,
+    SCE
   );
   assign VPWR = 1'h1;
   assign VGND = 1'h0;
@@ -19097,11 +19064,11 @@ module sky130_fd_sc_hd__sdfbbp(Q, Q_N, D, SCD, SCE, CLK, SET_B, RESET_B);
   (* src = "sdfbbp/sky130_fd_sc_hd__sdfbbp.behavioral.v:55.12-55.15" *)
   input CLK;
   (* src = "sdfbbp/sky130_fd_sc_hd__sdfbbp.behavioral.v:73.10-73.21" *)
-  wire CLK_delayed;
+  wire CLK;
   (* src = "sdfbbp/sky130_fd_sc_hd__sdfbbp.behavioral.v:52.12-52.13" *)
   input D;
   (* src = "sdfbbp/sky130_fd_sc_hd__sdfbbp.behavioral.v:70.10-70.19" *)
-  wire D_delayed;
+  wire D;
   (* src = "sdfbbp/sky130_fd_sc_hd__sdfbbp.behavioral.v:50.12-50.13" *)
   output Q;
   (* src = "sdfbbp/sky130_fd_sc_hd__sdfbbp.behavioral.v:51.12-51.15" *)
@@ -19111,21 +19078,21 @@ module sky130_fd_sc_hd__sdfbbp(Q, Q_N, D, SCD, SCE, CLK, SET_B, RESET_B);
   (* src = "sdfbbp/sky130_fd_sc_hd__sdfbbp.behavioral.v:57.12-57.19" *)
   input RESET_B;
   (* src = "sdfbbp/sky130_fd_sc_hd__sdfbbp.behavioral.v:75.10-75.25" *)
-  wire RESET_B_delayed;
+  wire RESET_B;
   (* src = "sdfbbp/sky130_fd_sc_hd__sdfbbp.behavioral.v:53.12-53.15" *)
   input SCD;
   (* src = "sdfbbp/sky130_fd_sc_hd__sdfbbp.behavioral.v:71.10-71.21" *)
-  wire SCD_delayed;
+  wire SCD;
   (* src = "sdfbbp/sky130_fd_sc_hd__sdfbbp.behavioral.v:54.12-54.15" *)
   input SCE;
   (* src = "sdfbbp/sky130_fd_sc_hd__sdfbbp.behavioral.v:72.10-72.21" *)
-  wire SCE_delayed;
+  wire SCE;
   (* src = "sdfbbp/sky130_fd_sc_hd__sdfbbp.behavioral.v:67.10-67.13" *)
   wire SET;
   (* src = "sdfbbp/sky130_fd_sc_hd__sdfbbp.behavioral.v:56.12-56.17" *)
   input SET_B;
   (* src = "sdfbbp/sky130_fd_sc_hd__sdfbbp.behavioral.v:74.10-74.23" *)
-  wire SET_B_delayed;
+  wire SET_B;
   (* src = "sdfbbp/sky130_fd_sc_hd__sdfbbp.behavioral.v:0.0-0.0" *)
   wire VGND;
   (* src = "sdfbbp/sky130_fd_sc_hd__sdfbbp.behavioral.v:0.0-0.0" *)
@@ -19156,18 +19123,18 @@ module sky130_fd_sc_hd__sdfbbp(Q, Q_N, D, SCD, SCE, CLK, SET_B, RESET_B);
   wire notifier;
   assign _00_ = cond0 & (* src = "sdfbbp/sky130_fd_sc_hd__sdfbbp.behavioral.v:93.22-93.35" *) cond1;
   assign _01_ = VPWR === (* src = "sdfbbp/sky130_fd_sc_hd__sdfbbp.behavioral.v:90.22-90.35" *) 1'h1;
-  assign _02_ = RESET_B_delayed === (* src = "sdfbbp/sky130_fd_sc_hd__sdfbbp.behavioral.v:91.33-91.57" *) 1'h1;
-  assign _03_ = SET_B_delayed === (* src = "sdfbbp/sky130_fd_sc_hd__sdfbbp.behavioral.v:92.33-92.55" *) 1'h1;
-  assign _04_ = SCE_delayed === (* src = "sdfbbp/sky130_fd_sc_hd__sdfbbp.behavioral.v:94.25-94.45" *) 1'h0;
-  assign _05_ = SCE_delayed === (* src = "sdfbbp/sky130_fd_sc_hd__sdfbbp.behavioral.v:95.27-95.47" *) 1'h1;
+  assign _02_ = RESET_B === (* src = "sdfbbp/sky130_fd_sc_hd__sdfbbp.behavioral.v:91.33-91.57" *) 1'h1;
+  assign _03_ = SET_B === (* src = "sdfbbp/sky130_fd_sc_hd__sdfbbp.behavioral.v:92.33-92.55" *) 1'h1;
+  assign _04_ = SCE === (* src = "sdfbbp/sky130_fd_sc_hd__sdfbbp.behavioral.v:94.25-94.45" *) 1'h0;
+  assign _05_ = SCE === (* src = "sdfbbp/sky130_fd_sc_hd__sdfbbp.behavioral.v:95.27-95.47" *) 1'h1;
   assign _06_ = awake && (* src = "sdfbbp/sky130_fd_sc_hd__sdfbbp.behavioral.v:91.22-91.59" *) _02_;
   assign _07_ = awake && (* src = "sdfbbp/sky130_fd_sc_hd__sdfbbp.behavioral.v:92.22-92.57" *) _03_;
   assign _08_ = _04_ && (* src = "sdfbbp/sky130_fd_sc_hd__sdfbbp.behavioral.v:94.23-94.56" *) condb;
   assign _09_ = _05_ && (* src = "sdfbbp/sky130_fd_sc_hd__sdfbbp.behavioral.v:95.25-95.58" *) condb;
   assign _10_ = _11_ && (* src = "sdfbbp/sky130_fd_sc_hd__sdfbbp.behavioral.v:96.25-96.63" *) condb;
-  assign _11_ = D_delayed !== (* src = "sdfbbp/sky130_fd_sc_hd__sdfbbp.behavioral.v:96.27-96.52" *) SCD_delayed;
-  assign _12_ = ~ (* src = "sdfbbp/sky130_fd_sc_hd__sdfbbp.behavioral.v:0.0-0.0" *) RESET_B_delayed;
-  assign _13_ = ~ (* src = "sdfbbp/sky130_fd_sc_hd__sdfbbp.behavioral.v:0.0-0.0" *) SET_B_delayed;
+  assign _11_ = D !== (* src = "sdfbbp/sky130_fd_sc_hd__sdfbbp.behavioral.v:96.27-96.52" *) SCD;
+  assign _12_ = ~ (* src = "sdfbbp/sky130_fd_sc_hd__sdfbbp.behavioral.v:0.0-0.0" *) RESET_B;
+  assign _13_ = ~ (* src = "sdfbbp/sky130_fd_sc_hd__sdfbbp.behavioral.v:0.0-0.0" *) SET_B;
   assign _14_ = ~ (* src = "sdfbbp/sky130_fd_sc_hd__sdfbbp.behavioral.v:0.0-0.0" *) buf_Q;
   (* module_not_derived = 32'd1 *)
   (* src = "sdfbbp/sky130_fd_sc_hd__sdfbbp.behavioral.v:89.42-89.117" *)
@@ -19175,7 +19142,7 @@ module sky130_fd_sc_hd__sdfbbp(Q, Q_N, D, SCD, SCE, CLK, SET_B, RESET_B);
     buf_Q,
     SET,
     RESET,
-    CLK_delayed,
+    CLK,
     mux_out,
     notifier,
     VPWR,
@@ -19185,9 +19152,9 @@ module sky130_fd_sc_hd__sdfbbp(Q, Q_N, D, SCD, SCE, CLK, SET_B, RESET_B);
   (* src = "sdfbbp/sky130_fd_sc_hd__sdfbbp.behavioral.v:88.42-88.117" *)
   sky130_fd_sc_hd__udp_mux_2to1 mux_2to10 (
     mux_out,
-    D_delayed,
-    SCD_delayed,
-    SCE_delayed
+    D,
+    SCD,
+    SCE
   );
   assign VPWR = 1'h1;
   assign VGND = 1'h0;
@@ -19283,11 +19250,11 @@ module sky130_fd_sc_hd__sdfrbp(Q, Q_N, CLK, D, SCD, SCE, RESET_B);
   (* src = "sdfrbp/sky130_fd_sc_hd__sdfrbp.behavioral.v:51.12-51.15" *)
   input CLK;
   (* src = "sdfrbp/sky130_fd_sc_hd__sdfrbp.behavioral.v:72.10-72.21" *)
-  wire CLK_delayed;
+  wire CLK;
   (* src = "sdfrbp/sky130_fd_sc_hd__sdfrbp.behavioral.v:52.12-52.13" *)
   input D;
   (* src = "sdfrbp/sky130_fd_sc_hd__sdfrbp.behavioral.v:68.10-68.19" *)
-  wire D_delayed;
+  wire D;
   (* src = "sdfrbp/sky130_fd_sc_hd__sdfrbp.behavioral.v:49.12-49.13" *)
   output Q;
   (* src = "sdfrbp/sky130_fd_sc_hd__sdfrbp.behavioral.v:50.12-50.15" *)
@@ -19297,15 +19264,15 @@ module sky130_fd_sc_hd__sdfrbp(Q, Q_N, CLK, D, SCD, SCE, RESET_B);
   (* src = "sdfrbp/sky130_fd_sc_hd__sdfrbp.behavioral.v:55.12-55.19" *)
   input RESET_B;
   (* src = "sdfrbp/sky130_fd_sc_hd__sdfrbp.behavioral.v:71.10-71.25" *)
-  wire RESET_B_delayed;
+  wire RESET_B;
   (* src = "sdfrbp/sky130_fd_sc_hd__sdfrbp.behavioral.v:53.12-53.15" *)
   input SCD;
   (* src = "sdfrbp/sky130_fd_sc_hd__sdfrbp.behavioral.v:69.10-69.21" *)
-  wire SCD_delayed;
+  wire SCD;
   (* src = "sdfrbp/sky130_fd_sc_hd__sdfrbp.behavioral.v:54.12-54.15" *)
   input SCE;
   (* src = "sdfrbp/sky130_fd_sc_hd__sdfrbp.behavioral.v:70.10-70.21" *)
-  wire SCE_delayed;
+  wire SCE;
   (* src = "sdfrbp/sky130_fd_sc_hd__sdfrbp.behavioral.v:0.0-0.0" *)
   wire VGND;
   (* src = "sdfrbp/sky130_fd_sc_hd__sdfrbp.behavioral.v:0.0-0.0" *)
@@ -19333,24 +19300,24 @@ module sky130_fd_sc_hd__sdfrbp(Q, Q_N, CLK, D, SCD, SCE, RESET_B);
   (* src = "sdfrbp/sky130_fd_sc_hd__sdfrbp.behavioral.v:67.10-67.18" *)
   wire notifier;
   assign _00_ = VPWR === (* src = "sdfrbp/sky130_fd_sc_hd__sdfrbp.behavioral.v:84.22-84.35" *) 1'h1;
-  assign _01_ = RESET_B_delayed === (* src = "sdfrbp/sky130_fd_sc_hd__sdfrbp.behavioral.v:85.24-85.48" *) 1'h1;
-  assign _02_ = SCE_delayed === (* src = "sdfrbp/sky130_fd_sc_hd__sdfrbp.behavioral.v:86.24-86.44" *) 1'h0;
-  assign _03_ = SCE_delayed === (* src = "sdfrbp/sky130_fd_sc_hd__sdfrbp.behavioral.v:87.24-87.44" *) 1'h1;
+  assign _01_ = RESET_B === (* src = "sdfrbp/sky130_fd_sc_hd__sdfrbp.behavioral.v:85.24-85.48" *) 1'h1;
+  assign _02_ = SCE === (* src = "sdfrbp/sky130_fd_sc_hd__sdfrbp.behavioral.v:86.24-86.44" *) 1'h0;
+  assign _03_ = SCE === (* src = "sdfrbp/sky130_fd_sc_hd__sdfrbp.behavioral.v:87.24-87.44" *) 1'h1;
   assign _04_ = RESET_B === (* src = "sdfrbp/sky130_fd_sc_hd__sdfrbp.behavioral.v:89.24-89.40" *) 1'h1;
   assign _05_ = _01_ && (* src = "sdfrbp/sky130_fd_sc_hd__sdfrbp.behavioral.v:85.22-85.59" *) awake;
   assign _06_ = _02_ && (* src = "sdfrbp/sky130_fd_sc_hd__sdfrbp.behavioral.v:86.22-86.55" *) cond0;
   assign _07_ = _03_ && (* src = "sdfrbp/sky130_fd_sc_hd__sdfrbp.behavioral.v:87.22-87.55" *) cond0;
   assign _08_ = _10_ && (* src = "sdfrbp/sky130_fd_sc_hd__sdfrbp.behavioral.v:88.22-88.60" *) cond0;
   assign _09_ = _04_ && (* src = "sdfrbp/sky130_fd_sc_hd__sdfrbp.behavioral.v:89.22-89.51" *) awake;
-  assign _10_ = D_delayed !== (* src = "sdfrbp/sky130_fd_sc_hd__sdfrbp.behavioral.v:88.24-88.49" *) SCD_delayed;
-  assign _11_ = ~ (* src = "sdfrbp/sky130_fd_sc_hd__sdfrbp.behavioral.v:0.0-0.0" *) RESET_B_delayed;
+  assign _10_ = D !== (* src = "sdfrbp/sky130_fd_sc_hd__sdfrbp.behavioral.v:88.24-88.49" *) SCD;
+  assign _11_ = ~ (* src = "sdfrbp/sky130_fd_sc_hd__sdfrbp.behavioral.v:0.0-0.0" *) RESET_B;
   assign _12_ = ~ (* src = "sdfrbp/sky130_fd_sc_hd__sdfrbp.behavioral.v:0.0-0.0" *) buf_Q;
   (* module_not_derived = 32'd1 *)
   (* src = "sdfrbp/sky130_fd_sc_hd__sdfrbp.behavioral.v:83.41-83.111" *)
   \sky130_fd_sc_hd__udp_dff$PR_pp$PG$N  dff0 (
     buf_Q,
     mux_out,
-    CLK_delayed,
+    CLK,
     RESET,
     notifier,
     VPWR,
@@ -19360,9 +19327,9 @@ module sky130_fd_sc_hd__sdfrbp(Q, Q_N, CLK, D, SCD, SCE, RESET_B);
   (* src = "sdfrbp/sky130_fd_sc_hd__sdfrbp.behavioral.v:82.41-82.111" *)
   sky130_fd_sc_hd__udp_mux_2to1 mux_2to10 (
     mux_out,
-    D_delayed,
-    SCD_delayed,
-    SCE_delayed
+    D,
+    SCD,
+    SCE
   );
   assign VPWR = 1'h1;
   assign VGND = 1'h0;
@@ -19495,11 +19462,11 @@ module sky130_fd_sc_hd__sdfrtn(Q, CLK_N, D, SCD, SCE, RESET_B);
   (* src = "sdfrtn/sky130_fd_sc_hd__sdfrtn.behavioral.v:49.12-49.17" *)
   input CLK_N;
   (* src = "sdfrtn/sky130_fd_sc_hd__sdfrtn.behavioral.v:71.10-71.23" *)
-  wire CLK_N_delayed;
+  wire CLK_N;
   (* src = "sdfrtn/sky130_fd_sc_hd__sdfrtn.behavioral.v:50.12-50.13" *)
   input D;
   (* src = "sdfrtn/sky130_fd_sc_hd__sdfrtn.behavioral.v:67.10-67.19" *)
-  wire D_delayed;
+  wire D;
   (* src = "sdfrtn/sky130_fd_sc_hd__sdfrtn.behavioral.v:48.12-48.13" *)
   output Q;
   (* src = "sdfrtn/sky130_fd_sc_hd__sdfrtn.behavioral.v:63.10-63.15" *)
@@ -19507,15 +19474,15 @@ module sky130_fd_sc_hd__sdfrtn(Q, CLK_N, D, SCD, SCE, RESET_B);
   (* src = "sdfrtn/sky130_fd_sc_hd__sdfrtn.behavioral.v:53.12-53.19" *)
   input RESET_B;
   (* src = "sdfrtn/sky130_fd_sc_hd__sdfrtn.behavioral.v:70.10-70.25" *)
-  wire RESET_B_delayed;
+  wire RESET_B;
   (* src = "sdfrtn/sky130_fd_sc_hd__sdfrtn.behavioral.v:51.12-51.15" *)
   input SCD;
   (* src = "sdfrtn/sky130_fd_sc_hd__sdfrtn.behavioral.v:68.10-68.21" *)
-  wire SCD_delayed;
+  wire SCD;
   (* src = "sdfrtn/sky130_fd_sc_hd__sdfrtn.behavioral.v:52.12-52.15" *)
   input SCE;
   (* src = "sdfrtn/sky130_fd_sc_hd__sdfrtn.behavioral.v:69.10-69.21" *)
-  wire SCE_delayed;
+  wire SCE;
   (* src = "sdfrtn/sky130_fd_sc_hd__sdfrtn.behavioral.v:0.0-0.0" *)
   wire VGND;
   (* src = "sdfrtn/sky130_fd_sc_hd__sdfrtn.behavioral.v:0.0-0.0" *)
@@ -19545,18 +19512,18 @@ module sky130_fd_sc_hd__sdfrtn(Q, CLK_N, D, SCD, SCE, RESET_B);
   (* src = "sdfrtn/sky130_fd_sc_hd__sdfrtn.behavioral.v:66.10-66.18" *)
   wire notifier;
   assign _00_ = VPWR === (* src = "sdfrtn/sky130_fd_sc_hd__sdfrtn.behavioral.v:84.22-84.35" *) 1'h1;
-  assign _01_ = RESET_B_delayed === (* src = "sdfrtn/sky130_fd_sc_hd__sdfrtn.behavioral.v:85.33-85.57" *) 1'h1;
-  assign _02_ = SCE_delayed === (* src = "sdfrtn/sky130_fd_sc_hd__sdfrtn.behavioral.v:86.24-86.44" *) 1'h0;
-  assign _03_ = SCE_delayed === (* src = "sdfrtn/sky130_fd_sc_hd__sdfrtn.behavioral.v:87.24-87.44" *) 1'h1;
+  assign _01_ = RESET_B === (* src = "sdfrtn/sky130_fd_sc_hd__sdfrtn.behavioral.v:85.33-85.57" *) 1'h1;
+  assign _02_ = SCE === (* src = "sdfrtn/sky130_fd_sc_hd__sdfrtn.behavioral.v:86.24-86.44" *) 1'h0;
+  assign _03_ = SCE === (* src = "sdfrtn/sky130_fd_sc_hd__sdfrtn.behavioral.v:87.24-87.44" *) 1'h1;
   assign _04_ = RESET_B === (* src = "sdfrtn/sky130_fd_sc_hd__sdfrtn.behavioral.v:89.33-89.49" *) 1'h1;
   assign _05_ = awake && (* src = "sdfrtn/sky130_fd_sc_hd__sdfrtn.behavioral.v:85.22-85.59" *) _01_;
   assign _06_ = _02_ && (* src = "sdfrtn/sky130_fd_sc_hd__sdfrtn.behavioral.v:86.22-86.55" *) cond0;
   assign _07_ = _03_ && (* src = "sdfrtn/sky130_fd_sc_hd__sdfrtn.behavioral.v:87.22-87.55" *) cond0;
   assign _08_ = _10_ && (* src = "sdfrtn/sky130_fd_sc_hd__sdfrtn.behavioral.v:88.22-88.60" *) cond0;
   assign _09_ = awake && (* src = "sdfrtn/sky130_fd_sc_hd__sdfrtn.behavioral.v:89.22-89.51" *) _04_;
-  assign _10_ = D_delayed !== (* src = "sdfrtn/sky130_fd_sc_hd__sdfrtn.behavioral.v:88.24-88.49" *) SCD_delayed;
-  assign _11_ = ~ (* src = "sdfrtn/sky130_fd_sc_hd__sdfrtn.behavioral.v:0.0-0.0" *) RESET_B_delayed;
-  assign _12_ = ~ (* src = "sdfrtn/sky130_fd_sc_hd__sdfrtn.behavioral.v:0.0-0.0" *) CLK_N_delayed;
+  assign _10_ = D !== (* src = "sdfrtn/sky130_fd_sc_hd__sdfrtn.behavioral.v:88.24-88.49" *) SCD;
+  assign _11_ = ~ (* src = "sdfrtn/sky130_fd_sc_hd__sdfrtn.behavioral.v:0.0-0.0" *) RESET_B;
+  assign _12_ = ~ (* src = "sdfrtn/sky130_fd_sc_hd__sdfrtn.behavioral.v:0.0-0.0" *) CLK_N;
   (* module_not_derived = 32'd1 *)
   (* src = "sdfrtn/sky130_fd_sc_hd__sdfrtn.behavioral.v:83.41-83.106" *)
   \sky130_fd_sc_hd__udp_dff$PR_pp$PG$N  dff0 (
@@ -19572,9 +19539,9 @@ module sky130_fd_sc_hd__sdfrtn(Q, CLK_N, D, SCD, SCE, RESET_B);
   (* src = "sdfrtn/sky130_fd_sc_hd__sdfrtn.behavioral.v:82.41-82.106" *)
   sky130_fd_sc_hd__udp_mux_2to1 mux_2to10 (
     mux_out,
-    D_delayed,
-    SCD_delayed,
-    SCE_delayed
+    D,
+    SCD,
+    SCE
   );
   assign VPWR = 1'h1;
   assign VGND = 1'h0;
@@ -19660,11 +19627,11 @@ module sky130_fd_sc_hd__sdfrtp(Q, CLK, D, SCD, SCE, RESET_B);
   (* src = "sdfrtp/sky130_fd_sc_hd__sdfrtp.behavioral.v:49.12-49.15" *)
   input CLK;
   (* src = "sdfrtp/sky130_fd_sc_hd__sdfrtp.behavioral.v:70.10-70.21" *)
-  wire CLK_delayed;
+  wire CLK;
   (* src = "sdfrtp/sky130_fd_sc_hd__sdfrtp.behavioral.v:50.12-50.13" *)
   input D;
   (* src = "sdfrtp/sky130_fd_sc_hd__sdfrtp.behavioral.v:66.10-66.19" *)
-  wire D_delayed;
+  wire D;
   (* src = "sdfrtp/sky130_fd_sc_hd__sdfrtp.behavioral.v:48.12-48.13" *)
   output Q;
   (* src = "sdfrtp/sky130_fd_sc_hd__sdfrtp.behavioral.v:63.10-63.15" *)
@@ -19672,15 +19639,15 @@ module sky130_fd_sc_hd__sdfrtp(Q, CLK, D, SCD, SCE, RESET_B);
   (* src = "sdfrtp/sky130_fd_sc_hd__sdfrtp.behavioral.v:53.12-53.19" *)
   input RESET_B;
   (* src = "sdfrtp/sky130_fd_sc_hd__sdfrtp.behavioral.v:69.10-69.25" *)
-  wire RESET_B_delayed;
+  wire RESET_B;
   (* src = "sdfrtp/sky130_fd_sc_hd__sdfrtp.behavioral.v:51.12-51.15" *)
   input SCD;
   (* src = "sdfrtp/sky130_fd_sc_hd__sdfrtp.behavioral.v:67.10-67.21" *)
-  wire SCD_delayed;
+  wire SCD;
   (* src = "sdfrtp/sky130_fd_sc_hd__sdfrtp.behavioral.v:52.12-52.15" *)
   input SCE;
   (* src = "sdfrtp/sky130_fd_sc_hd__sdfrtp.behavioral.v:68.10-68.21" *)
-  wire SCE_delayed;
+  wire SCE;
   (* src = "sdfrtp/sky130_fd_sc_hd__sdfrtp.behavioral.v:0.0-0.0" *)
   wire VGND;
   (* src = "sdfrtp/sky130_fd_sc_hd__sdfrtp.behavioral.v:0.0-0.0" *)
@@ -19708,23 +19675,23 @@ module sky130_fd_sc_hd__sdfrtp(Q, CLK, D, SCD, SCE, RESET_B);
   (* src = "sdfrtp/sky130_fd_sc_hd__sdfrtp.behavioral.v:65.10-65.18" *)
   wire notifier;
   assign _00_ = VPWR === (* src = "sdfrtp/sky130_fd_sc_hd__sdfrtp.behavioral.v:82.22-82.35" *) 1'h1;
-  assign _01_ = RESET_B_delayed === (* src = "sdfrtp/sky130_fd_sc_hd__sdfrtp.behavioral.v:83.24-83.48" *) 1'h1;
-  assign _02_ = SCE_delayed === (* src = "sdfrtp/sky130_fd_sc_hd__sdfrtp.behavioral.v:84.24-84.44" *) 1'h0;
-  assign _03_ = SCE_delayed === (* src = "sdfrtp/sky130_fd_sc_hd__sdfrtp.behavioral.v:85.24-85.44" *) 1'h1;
+  assign _01_ = RESET_B === (* src = "sdfrtp/sky130_fd_sc_hd__sdfrtp.behavioral.v:83.24-83.48" *) 1'h1;
+  assign _02_ = SCE === (* src = "sdfrtp/sky130_fd_sc_hd__sdfrtp.behavioral.v:84.24-84.44" *) 1'h0;
+  assign _03_ = SCE === (* src = "sdfrtp/sky130_fd_sc_hd__sdfrtp.behavioral.v:85.24-85.44" *) 1'h1;
   assign _04_ = RESET_B === (* src = "sdfrtp/sky130_fd_sc_hd__sdfrtp.behavioral.v:87.24-87.40" *) 1'h1;
   assign _05_ = _01_ && (* src = "sdfrtp/sky130_fd_sc_hd__sdfrtp.behavioral.v:83.22-83.59" *) awake;
   assign _06_ = _02_ && (* src = "sdfrtp/sky130_fd_sc_hd__sdfrtp.behavioral.v:84.22-84.55" *) cond0;
   assign _07_ = _03_ && (* src = "sdfrtp/sky130_fd_sc_hd__sdfrtp.behavioral.v:85.22-85.55" *) cond0;
   assign _08_ = _10_ && (* src = "sdfrtp/sky130_fd_sc_hd__sdfrtp.behavioral.v:86.22-86.60" *) cond0;
   assign _09_ = _04_ && (* src = "sdfrtp/sky130_fd_sc_hd__sdfrtp.behavioral.v:87.22-87.51" *) awake;
-  assign _10_ = D_delayed !== (* src = "sdfrtp/sky130_fd_sc_hd__sdfrtp.behavioral.v:86.24-86.49" *) SCD_delayed;
-  assign _11_ = ~ (* src = "sdfrtp/sky130_fd_sc_hd__sdfrtp.behavioral.v:0.0-0.0" *) RESET_B_delayed;
+  assign _10_ = D !== (* src = "sdfrtp/sky130_fd_sc_hd__sdfrtp.behavioral.v:86.24-86.49" *) SCD;
+  assign _11_ = ~ (* src = "sdfrtp/sky130_fd_sc_hd__sdfrtp.behavioral.v:0.0-0.0" *) RESET_B;
   (* module_not_derived = 32'd1 *)
   (* src = "sdfrtp/sky130_fd_sc_hd__sdfrtp.behavioral.v:81.41-81.111" *)
   \sky130_fd_sc_hd__udp_dff$PR_pp$PG$N  dff0 (
     buf_Q,
     mux_out,
-    CLK_delayed,
+    CLK,
     RESET,
     notifier,
     VPWR,
@@ -19734,9 +19701,9 @@ module sky130_fd_sc_hd__sdfrtp(Q, CLK, D, SCD, SCE, RESET_B);
   (* src = "sdfrtp/sky130_fd_sc_hd__sdfrtp.behavioral.v:80.41-80.111" *)
   sky130_fd_sc_hd__udp_mux_2to1 mux_2to10 (
     mux_out,
-    D_delayed,
-    SCD_delayed,
-    SCE_delayed
+    D,
+    SCD,
+    SCE
   );
   assign VPWR = 1'h1;
   assign VGND = 1'h0;
@@ -19901,11 +19868,11 @@ module sky130_fd_sc_hd__sdfsbp(Q, Q_N, CLK, D, SCD, SCE, SET_B);
   (* src = "sdfsbp/sky130_fd_sc_hd__sdfsbp.behavioral.v:51.12-51.15" *)
   input CLK;
   (* src = "sdfsbp/sky130_fd_sc_hd__sdfsbp.behavioral.v:72.10-72.21" *)
-  wire CLK_delayed;
+  wire CLK;
   (* src = "sdfsbp/sky130_fd_sc_hd__sdfsbp.behavioral.v:52.12-52.13" *)
   input D;
   (* src = "sdfsbp/sky130_fd_sc_hd__sdfsbp.behavioral.v:68.10-68.19" *)
-  wire D_delayed;
+  wire D;
   (* src = "sdfsbp/sky130_fd_sc_hd__sdfsbp.behavioral.v:49.12-49.13" *)
   output Q;
   (* src = "sdfsbp/sky130_fd_sc_hd__sdfsbp.behavioral.v:50.12-50.15" *)
@@ -19913,17 +19880,17 @@ module sky130_fd_sc_hd__sdfsbp(Q, Q_N, CLK, D, SCD, SCE, SET_B);
   (* src = "sdfsbp/sky130_fd_sc_hd__sdfsbp.behavioral.v:53.12-53.15" *)
   input SCD;
   (* src = "sdfsbp/sky130_fd_sc_hd__sdfsbp.behavioral.v:69.10-69.21" *)
-  wire SCD_delayed;
+  wire SCD;
   (* src = "sdfsbp/sky130_fd_sc_hd__sdfsbp.behavioral.v:54.12-54.15" *)
   input SCE;
   (* src = "sdfsbp/sky130_fd_sc_hd__sdfsbp.behavioral.v:70.10-70.21" *)
-  wire SCE_delayed;
+  wire SCE;
   (* src = "sdfsbp/sky130_fd_sc_hd__sdfsbp.behavioral.v:65.10-65.13" *)
   wire SET;
   (* src = "sdfsbp/sky130_fd_sc_hd__sdfsbp.behavioral.v:55.12-55.17" *)
   input SET_B;
   (* src = "sdfsbp/sky130_fd_sc_hd__sdfsbp.behavioral.v:71.10-71.23" *)
-  wire SET_B_delayed;
+  wire SET_B;
   (* src = "sdfsbp/sky130_fd_sc_hd__sdfsbp.behavioral.v:0.0-0.0" *)
   wire VGND;
   (* src = "sdfsbp/sky130_fd_sc_hd__sdfsbp.behavioral.v:0.0-0.0" *)
@@ -19951,24 +19918,24 @@ module sky130_fd_sc_hd__sdfsbp(Q, Q_N, CLK, D, SCD, SCE, SET_B);
   (* src = "sdfsbp/sky130_fd_sc_hd__sdfsbp.behavioral.v:67.10-67.18" *)
   wire notifier;
   assign _00_ = VPWR === (* src = "sdfsbp/sky130_fd_sc_hd__sdfsbp.behavioral.v:84.22-84.35" *) 1'h1;
-  assign _01_ = SET_B_delayed === (* src = "sdfsbp/sky130_fd_sc_hd__sdfsbp.behavioral.v:85.24-85.46" *) 1'h1;
-  assign _02_ = SCE_delayed === (* src = "sdfsbp/sky130_fd_sc_hd__sdfsbp.behavioral.v:86.24-86.44" *) 1'h0;
-  assign _03_ = SCE_delayed === (* src = "sdfsbp/sky130_fd_sc_hd__sdfsbp.behavioral.v:87.24-87.44" *) 1'h1;
+  assign _01_ = SET_B === (* src = "sdfsbp/sky130_fd_sc_hd__sdfsbp.behavioral.v:85.24-85.46" *) 1'h1;
+  assign _02_ = SCE === (* src = "sdfsbp/sky130_fd_sc_hd__sdfsbp.behavioral.v:86.24-86.44" *) 1'h0;
+  assign _03_ = SCE === (* src = "sdfsbp/sky130_fd_sc_hd__sdfsbp.behavioral.v:87.24-87.44" *) 1'h1;
   assign _04_ = SET_B === (* src = "sdfsbp/sky130_fd_sc_hd__sdfsbp.behavioral.v:89.24-89.38" *) 1'h1;
   assign _05_ = _01_ && (* src = "sdfsbp/sky130_fd_sc_hd__sdfsbp.behavioral.v:85.22-85.57" *) awake;
   assign _06_ = _02_ && (* src = "sdfsbp/sky130_fd_sc_hd__sdfsbp.behavioral.v:86.22-86.55" *) cond0;
   assign _07_ = _03_ && (* src = "sdfsbp/sky130_fd_sc_hd__sdfsbp.behavioral.v:87.22-87.55" *) cond0;
   assign _08_ = _10_ && (* src = "sdfsbp/sky130_fd_sc_hd__sdfsbp.behavioral.v:88.22-88.60" *) cond0;
   assign _09_ = _04_ && (* src = "sdfsbp/sky130_fd_sc_hd__sdfsbp.behavioral.v:89.22-89.49" *) awake;
-  assign _10_ = D_delayed !== (* src = "sdfsbp/sky130_fd_sc_hd__sdfsbp.behavioral.v:88.24-88.49" *) SCD_delayed;
-  assign _11_ = ~ (* src = "sdfsbp/sky130_fd_sc_hd__sdfsbp.behavioral.v:0.0-0.0" *) SET_B_delayed;
+  assign _10_ = D !== (* src = "sdfsbp/sky130_fd_sc_hd__sdfsbp.behavioral.v:88.24-88.49" *) SCD;
+  assign _11_ = ~ (* src = "sdfsbp/sky130_fd_sc_hd__sdfsbp.behavioral.v:0.0-0.0" *) SET_B;
   assign _12_ = ~ (* src = "sdfsbp/sky130_fd_sc_hd__sdfsbp.behavioral.v:0.0-0.0" *) buf_Q;
   (* module_not_derived = 32'd1 *)
   (* src = "sdfsbp/sky130_fd_sc_hd__sdfsbp.behavioral.v:83.41-83.109" *)
   \sky130_fd_sc_hd__udp_dff$PS_pp$PG$N  dff0 (
     buf_Q,
     mux_out,
-    CLK_delayed,
+    CLK,
     SET,
     notifier,
     VPWR,
@@ -19978,9 +19945,9 @@ module sky130_fd_sc_hd__sdfsbp(Q, Q_N, CLK, D, SCD, SCE, SET_B);
   (* src = "sdfsbp/sky130_fd_sc_hd__sdfsbp.behavioral.v:82.41-82.109" *)
   sky130_fd_sc_hd__udp_mux_2to1 mux_2to10 (
     mux_out,
-    D_delayed,
-    SCD_delayed,
-    SCE_delayed
+    D,
+    SCD,
+    SCE
   );
   assign VPWR = 1'h1;
   assign VGND = 1'h0;
@@ -20111,27 +20078,27 @@ module sky130_fd_sc_hd__sdfstp(Q, CLK, D, SCD, SCE, SET_B);
   (* src = "sdfstp/sky130_fd_sc_hd__sdfstp.behavioral.v:49.12-49.15" *)
   input CLK;
   (* src = "sdfstp/sky130_fd_sc_hd__sdfstp.behavioral.v:70.10-70.21" *)
-  wire CLK_delayed;
+  wire CLK;
   (* src = "sdfstp/sky130_fd_sc_hd__sdfstp.behavioral.v:50.12-50.13" *)
   input D;
   (* src = "sdfstp/sky130_fd_sc_hd__sdfstp.behavioral.v:66.10-66.19" *)
-  wire D_delayed;
+  wire D;
   (* src = "sdfstp/sky130_fd_sc_hd__sdfstp.behavioral.v:48.12-48.13" *)
   output Q;
   (* src = "sdfstp/sky130_fd_sc_hd__sdfstp.behavioral.v:51.12-51.15" *)
   input SCD;
   (* src = "sdfstp/sky130_fd_sc_hd__sdfstp.behavioral.v:67.10-67.21" *)
-  wire SCD_delayed;
+  wire SCD;
   (* src = "sdfstp/sky130_fd_sc_hd__sdfstp.behavioral.v:52.12-52.15" *)
   input SCE;
   (* src = "sdfstp/sky130_fd_sc_hd__sdfstp.behavioral.v:68.10-68.21" *)
-  wire SCE_delayed;
+  wire SCE;
   (* src = "sdfstp/sky130_fd_sc_hd__sdfstp.behavioral.v:63.10-63.13" *)
   wire SET;
   (* src = "sdfstp/sky130_fd_sc_hd__sdfstp.behavioral.v:53.12-53.17" *)
   input SET_B;
   (* src = "sdfstp/sky130_fd_sc_hd__sdfstp.behavioral.v:69.10-69.23" *)
-  wire SET_B_delayed;
+  wire SET_B;
   (* src = "sdfstp/sky130_fd_sc_hd__sdfstp.behavioral.v:0.0-0.0" *)
   wire VGND;
   (* src = "sdfstp/sky130_fd_sc_hd__sdfstp.behavioral.v:0.0-0.0" *)
@@ -20159,23 +20126,23 @@ module sky130_fd_sc_hd__sdfstp(Q, CLK, D, SCD, SCE, SET_B);
   (* src = "sdfstp/sky130_fd_sc_hd__sdfstp.behavioral.v:65.10-65.18" *)
   wire notifier;
   assign _00_ = VPWR === (* src = "sdfstp/sky130_fd_sc_hd__sdfstp.behavioral.v:82.22-82.35" *) 1'h1;
-  assign _01_ = SET_B_delayed === (* src = "sdfstp/sky130_fd_sc_hd__sdfstp.behavioral.v:83.24-83.46" *) 1'h1;
-  assign _02_ = SCE_delayed === (* src = "sdfstp/sky130_fd_sc_hd__sdfstp.behavioral.v:84.24-84.44" *) 1'h0;
-  assign _03_ = SCE_delayed === (* src = "sdfstp/sky130_fd_sc_hd__sdfstp.behavioral.v:85.24-85.44" *) 1'h1;
+  assign _01_ = SET_B === (* src = "sdfstp/sky130_fd_sc_hd__sdfstp.behavioral.v:83.24-83.46" *) 1'h1;
+  assign _02_ = SCE === (* src = "sdfstp/sky130_fd_sc_hd__sdfstp.behavioral.v:84.24-84.44" *) 1'h0;
+  assign _03_ = SCE === (* src = "sdfstp/sky130_fd_sc_hd__sdfstp.behavioral.v:85.24-85.44" *) 1'h1;
   assign _04_ = SET_B === (* src = "sdfstp/sky130_fd_sc_hd__sdfstp.behavioral.v:87.24-87.38" *) 1'h1;
   assign _05_ = _01_ && (* src = "sdfstp/sky130_fd_sc_hd__sdfstp.behavioral.v:83.22-83.57" *) awake;
   assign _06_ = _02_ && (* src = "sdfstp/sky130_fd_sc_hd__sdfstp.behavioral.v:84.22-84.55" *) cond0;
   assign _07_ = _03_ && (* src = "sdfstp/sky130_fd_sc_hd__sdfstp.behavioral.v:85.22-85.55" *) cond0;
   assign _08_ = _10_ && (* src = "sdfstp/sky130_fd_sc_hd__sdfstp.behavioral.v:86.22-86.60" *) cond0;
   assign _09_ = _04_ && (* src = "sdfstp/sky130_fd_sc_hd__sdfstp.behavioral.v:87.22-87.49" *) awake;
-  assign _10_ = D_delayed !== (* src = "sdfstp/sky130_fd_sc_hd__sdfstp.behavioral.v:86.24-86.49" *) SCD_delayed;
-  assign _11_ = ~ (* src = "sdfstp/sky130_fd_sc_hd__sdfstp.behavioral.v:0.0-0.0" *) SET_B_delayed;
+  assign _10_ = D !== (* src = "sdfstp/sky130_fd_sc_hd__sdfstp.behavioral.v:86.24-86.49" *) SCD;
+  assign _11_ = ~ (* src = "sdfstp/sky130_fd_sc_hd__sdfstp.behavioral.v:0.0-0.0" *) SET_B;
   (* module_not_derived = 32'd1 *)
   (* src = "sdfstp/sky130_fd_sc_hd__sdfstp.behavioral.v:81.41-81.109" *)
   \sky130_fd_sc_hd__udp_dff$PS_pp$PG$N  dff0 (
     buf_Q,
     mux_out,
-    CLK_delayed,
+    CLK,
     SET,
     notifier,
     VPWR,
@@ -20185,9 +20152,9 @@ module sky130_fd_sc_hd__sdfstp(Q, CLK, D, SCD, SCE, SET_B);
   (* src = "sdfstp/sky130_fd_sc_hd__sdfstp.behavioral.v:80.41-80.109" *)
   sky130_fd_sc_hd__udp_mux_2to1 mux_2to10 (
     mux_out,
-    D_delayed,
-    SCD_delayed,
-    SCE_delayed
+    D,
+    SCD,
+    SCE
   );
   assign VPWR = 1'h1;
   assign VGND = 1'h0;
@@ -20342,11 +20309,11 @@ module sky130_fd_sc_hd__sdfxbp(Q, Q_N, CLK, D, SCD, SCE);
   (* src = "sdfxbp/sky130_fd_sc_hd__sdfxbp.behavioral.v:49.12-49.15" *)
   input CLK;
   (* src = "sdfxbp/sky130_fd_sc_hd__sdfxbp.behavioral.v:67.10-67.21" *)
-  wire CLK_delayed;
+  wire CLK;
   (* src = "sdfxbp/sky130_fd_sc_hd__sdfxbp.behavioral.v:50.12-50.13" *)
   input D;
   (* src = "sdfxbp/sky130_fd_sc_hd__sdfxbp.behavioral.v:64.10-64.19" *)
-  wire D_delayed;
+  wire D;
   (* src = "sdfxbp/sky130_fd_sc_hd__sdfxbp.behavioral.v:47.12-47.13" *)
   output Q;
   (* src = "sdfxbp/sky130_fd_sc_hd__sdfxbp.behavioral.v:48.12-48.15" *)
@@ -20354,11 +20321,11 @@ module sky130_fd_sc_hd__sdfxbp(Q, Q_N, CLK, D, SCD, SCE);
   (* src = "sdfxbp/sky130_fd_sc_hd__sdfxbp.behavioral.v:51.12-51.15" *)
   input SCD;
   (* src = "sdfxbp/sky130_fd_sc_hd__sdfxbp.behavioral.v:65.10-65.21" *)
-  wire SCD_delayed;
+  wire SCD;
   (* src = "sdfxbp/sky130_fd_sc_hd__sdfxbp.behavioral.v:52.12-52.15" *)
   input SCE;
   (* src = "sdfxbp/sky130_fd_sc_hd__sdfxbp.behavioral.v:66.10-66.21" *)
-  wire SCE_delayed;
+  wire SCE;
   (* src = "sdfxbp/sky130_fd_sc_hd__sdfxbp.behavioral.v:0.0-0.0" *)
   wire VGND;
   (* src = "sdfxbp/sky130_fd_sc_hd__sdfxbp.behavioral.v:0.0-0.0" *)
@@ -20382,19 +20349,19 @@ module sky130_fd_sc_hd__sdfxbp(Q, Q_N, CLK, D, SCD, SCE);
   (* src = "sdfxbp/sky130_fd_sc_hd__sdfxbp.behavioral.v:63.10-63.18" *)
   wire notifier;
   assign _00_ = VPWR === (* src = "sdfxbp/sky130_fd_sc_hd__sdfxbp.behavioral.v:76.22-76.35" *) 1'h1;
-  assign _01_ = SCE_delayed === (* src = "sdfxbp/sky130_fd_sc_hd__sdfxbp.behavioral.v:77.24-77.44" *) 1'h0;
-  assign _02_ = SCE_delayed === (* src = "sdfxbp/sky130_fd_sc_hd__sdfxbp.behavioral.v:78.24-78.44" *) 1'h1;
+  assign _01_ = SCE === (* src = "sdfxbp/sky130_fd_sc_hd__sdfxbp.behavioral.v:77.24-77.44" *) 1'h0;
+  assign _02_ = SCE === (* src = "sdfxbp/sky130_fd_sc_hd__sdfxbp.behavioral.v:78.24-78.44" *) 1'h1;
   assign _03_ = _01_ && (* src = "sdfxbp/sky130_fd_sc_hd__sdfxbp.behavioral.v:77.22-77.55" *) awake;
   assign _04_ = _02_ && (* src = "sdfxbp/sky130_fd_sc_hd__sdfxbp.behavioral.v:78.22-78.55" *) awake;
   assign _05_ = _06_ && (* src = "sdfxbp/sky130_fd_sc_hd__sdfxbp.behavioral.v:79.22-79.60" *) awake;
-  assign _06_ = D_delayed !== (* src = "sdfxbp/sky130_fd_sc_hd__sdfxbp.behavioral.v:79.24-79.49" *) SCD_delayed;
+  assign _06_ = D !== (* src = "sdfxbp/sky130_fd_sc_hd__sdfxbp.behavioral.v:79.24-79.49" *) SCD;
   assign _07_ = ~ (* src = "sdfxbp/sky130_fd_sc_hd__sdfxbp.behavioral.v:0.0-0.0" *) buf_Q;
   (* module_not_derived = 32'd1 *)
   (* src = "sdfxbp/sky130_fd_sc_hd__sdfxbp.behavioral.v:75.40-75.103" *)
   \sky130_fd_sc_hd__udp_dff$P_pp$PG$N  dff0 (
     buf_Q,
     mux_out,
-    CLK_delayed,
+    CLK,
     notifier,
     VPWR,
     VGND
@@ -20403,9 +20370,9 @@ module sky130_fd_sc_hd__sdfxbp(Q, Q_N, CLK, D, SCD, SCE);
   (* src = "sdfxbp/sky130_fd_sc_hd__sdfxbp.behavioral.v:74.40-74.103" *)
   sky130_fd_sc_hd__udp_mux_2to1 mux_2to10 (
     mux_out,
-    D_delayed,
-    SCD_delayed,
-    SCE_delayed
+    D,
+    SCD,
+    SCE
   );
   assign VPWR = 1'h1;
   assign VGND = 1'h0;
@@ -20517,21 +20484,21 @@ module sky130_fd_sc_hd__sdfxtp(Q, CLK, D, SCD, SCE);
   (* src = "sdfxtp/sky130_fd_sc_hd__sdfxtp.behavioral.v:47.12-47.15" *)
   input CLK;
   (* src = "sdfxtp/sky130_fd_sc_hd__sdfxtp.behavioral.v:65.10-65.21" *)
-  wire CLK_delayed;
+  wire CLK;
   (* src = "sdfxtp/sky130_fd_sc_hd__sdfxtp.behavioral.v:48.12-48.13" *)
   input D;
   (* src = "sdfxtp/sky130_fd_sc_hd__sdfxtp.behavioral.v:62.10-62.19" *)
-  wire D_delayed;
+  wire D;
   (* src = "sdfxtp/sky130_fd_sc_hd__sdfxtp.behavioral.v:46.12-46.13" *)
   output Q;
   (* src = "sdfxtp/sky130_fd_sc_hd__sdfxtp.behavioral.v:49.12-49.15" *)
   input SCD;
   (* src = "sdfxtp/sky130_fd_sc_hd__sdfxtp.behavioral.v:63.10-63.21" *)
-  wire SCD_delayed;
+  wire SCD;
   (* src = "sdfxtp/sky130_fd_sc_hd__sdfxtp.behavioral.v:50.12-50.15" *)
   input SCE;
   (* src = "sdfxtp/sky130_fd_sc_hd__sdfxtp.behavioral.v:64.10-64.21" *)
-  wire SCE_delayed;
+  wire SCE;
   (* src = "sdfxtp/sky130_fd_sc_hd__sdfxtp.behavioral.v:0.0-0.0" *)
   wire VGND;
   (* src = "sdfxtp/sky130_fd_sc_hd__sdfxtp.behavioral.v:0.0-0.0" *)
@@ -20555,18 +20522,18 @@ module sky130_fd_sc_hd__sdfxtp(Q, CLK, D, SCD, SCE);
   (* src = "sdfxtp/sky130_fd_sc_hd__sdfxtp.behavioral.v:61.10-61.18" *)
   wire notifier;
   assign _00_ = VPWR === (* src = "sdfxtp/sky130_fd_sc_hd__sdfxtp.behavioral.v:74.22-74.35" *) 1'h1;
-  assign _01_ = SCE_delayed === (* src = "sdfxtp/sky130_fd_sc_hd__sdfxtp.behavioral.v:75.24-75.44" *) 1'h0;
-  assign _02_ = SCE_delayed === (* src = "sdfxtp/sky130_fd_sc_hd__sdfxtp.behavioral.v:76.24-76.44" *) 1'h1;
+  assign _01_ = SCE === (* src = "sdfxtp/sky130_fd_sc_hd__sdfxtp.behavioral.v:75.24-75.44" *) 1'h0;
+  assign _02_ = SCE === (* src = "sdfxtp/sky130_fd_sc_hd__sdfxtp.behavioral.v:76.24-76.44" *) 1'h1;
   assign _03_ = _01_ && (* src = "sdfxtp/sky130_fd_sc_hd__sdfxtp.behavioral.v:75.22-75.55" *) awake;
   assign _04_ = _02_ && (* src = "sdfxtp/sky130_fd_sc_hd__sdfxtp.behavioral.v:76.22-76.55" *) awake;
   assign _05_ = _06_ && (* src = "sdfxtp/sky130_fd_sc_hd__sdfxtp.behavioral.v:77.22-77.60" *) awake;
-  assign _06_ = D_delayed !== (* src = "sdfxtp/sky130_fd_sc_hd__sdfxtp.behavioral.v:77.24-77.49" *) SCD_delayed;
+  assign _06_ = D !== (* src = "sdfxtp/sky130_fd_sc_hd__sdfxtp.behavioral.v:77.24-77.49" *) SCD;
   (* module_not_derived = 32'd1 *)
   (* src = "sdfxtp/sky130_fd_sc_hd__sdfxtp.behavioral.v:73.40-73.103" *)
   \sky130_fd_sc_hd__udp_dff$P_pp$PG$N  dff0 (
     buf_Q,
     mux_out,
-    CLK_delayed,
+    CLK,
     notifier,
     VPWR,
     VGND
@@ -20575,9 +20542,9 @@ module sky130_fd_sc_hd__sdfxtp(Q, CLK, D, SCD, SCE);
   (* src = "sdfxtp/sky130_fd_sc_hd__sdfxtp.behavioral.v:72.40-72.103" *)
   sky130_fd_sc_hd__udp_mux_2to1 mux_2to10 (
     mux_out,
-    D_delayed,
-    SCD_delayed,
-    SCE_delayed
+    D,
+    SCD,
+    SCE
   );
   assign VPWR = 1'h1;
   assign VGND = 1'h0;
@@ -20724,13 +20691,13 @@ module sky130_fd_sc_hd__sdlclkp(GCLK, SCE, GATE, CLK);
   (* src = "sdlclkp/sky130_fd_sc_hd__sdlclkp.behavioral.v:47.12-47.15" *)
   input CLK;
   (* src = "sdlclkp/sky130_fd_sc_hd__sdlclkp.behavioral.v:59.10-59.21" *)
-  wire CLK_delayed;
+  wire CLK;
   (* src = "sdlclkp/sky130_fd_sc_hd__sdlclkp.behavioral.v:46.12-46.16" *)
   input GATE;
   (* src = "sdlclkp/sky130_fd_sc_hd__sdlclkp.behavioral.v:66.10-66.20" *)
   wire GATE_awake;
   (* src = "sdlclkp/sky130_fd_sc_hd__sdlclkp.behavioral.v:61.10-61.22" *)
-  wire GATE_delayed;
+  wire GATE;
   (* src = "sdlclkp/sky130_fd_sc_hd__sdlclkp.behavioral.v:44.12-44.16" *)
   output GCLK;
   (* src = "sdlclkp/sky130_fd_sc_hd__sdlclkp.behavioral.v:45.12-45.15" *)
@@ -20738,7 +20705,7 @@ module sky130_fd_sc_hd__sdlclkp(GCLK, SCE, GATE, CLK);
   (* src = "sdlclkp/sky130_fd_sc_hd__sdlclkp.behavioral.v:65.10-65.19" *)
   wire SCE_awake;
   (* src = "sdlclkp/sky130_fd_sc_hd__sdlclkp.behavioral.v:60.10-60.21" *)
-  wire SCE_delayed;
+  wire SCE;
   (* src = "sdlclkp/sky130_fd_sc_hd__sdlclkp.behavioral.v:62.10-62.26" *)
   wire SCE_gate_delayed;
   (* src = "sdlclkp/sky130_fd_sc_hd__sdlclkp.behavioral.v:0.0-0.0" *)
@@ -20759,16 +20726,16 @@ module sky130_fd_sc_hd__sdlclkp(GCLK, SCE, GATE, CLK);
   wire m0n;
   (* src = "sdlclkp/sky130_fd_sc_hd__sdlclkp.behavioral.v:63.10-63.18" *)
   wire notifier;
-  assign _00_ = m0n & (* src = "sdlclkp/sky130_fd_sc_hd__sdlclkp.behavioral.v:73.43-73.115" *) CLK_delayed;
+  assign _00_ = m0n & (* src = "sdlclkp/sky130_fd_sc_hd__sdlclkp.behavioral.v:73.43-73.115" *) CLK;
   assign _01_ = awake & (* src = "sdlclkp/sky130_fd_sc_hd__sdlclkp.behavioral.v:75.26-75.59" *) _04_;
   assign _02_ = awake & (* src = "sdlclkp/sky130_fd_sc_hd__sdlclkp.behavioral.v:76.27-76.59" *) _05_;
   assign _03_ = VPWR === (* src = "sdlclkp/sky130_fd_sc_hd__sdlclkp.behavioral.v:74.22-74.35" *) 1'h1;
-  assign _04_ = GATE_delayed === (* src = "sdlclkp/sky130_fd_sc_hd__sdlclkp.behavioral.v:75.36-75.57" *) 1'h0;
-  assign _05_ = SCE_delayed === (* src = "sdlclkp/sky130_fd_sc_hd__sdlclkp.behavioral.v:76.37-76.57" *) 1'h0;
+  assign _04_ = GATE === (* src = "sdlclkp/sky130_fd_sc_hd__sdlclkp.behavioral.v:75.36-75.57" *) 1'h0;
+  assign _05_ = SCE === (* src = "sdlclkp/sky130_fd_sc_hd__sdlclkp.behavioral.v:76.37-76.57" *) 1'h0;
   assign _06_ = ~ (* src = "sdlclkp/sky130_fd_sc_hd__sdlclkp.behavioral.v:0.0-0.0" *) m0;
-  assign _07_ = ~ (* src = "sdlclkp/sky130_fd_sc_hd__sdlclkp.behavioral.v:0.0-0.0" *) CLK_delayed;
+  assign _07_ = ~ (* src = "sdlclkp/sky130_fd_sc_hd__sdlclkp.behavioral.v:0.0-0.0" *) CLK;
   assign _08_ = ~ (* src = "sdlclkp/sky130_fd_sc_hd__sdlclkp.behavioral.v:0.0-0.0" *) _09_;
-  assign _09_ = GATE_delayed | (* src = "sdlclkp/sky130_fd_sc_hd__sdlclkp.behavioral.v:71.43-71.115" *) SCE_delayed;
+  assign _09_ = GATE | (* src = "sdlclkp/sky130_fd_sc_hd__sdlclkp.behavioral.v:71.43-71.115" *) SCE;
   (* module_not_derived = 32'd1 *)
   (* src = "sdlclkp/sky130_fd_sc_hd__sdlclkp.behavioral.v:72.43-72.115" *)
   \sky130_fd_sc_hd__udp_dlatch$P_pp$PG$N  dlatch0 (
@@ -20921,15 +20888,15 @@ module sky130_fd_sc_hd__sedfxbp(Q, Q_N, CLK, D, DE, SCD, SCE);
   (* src = "sedfxbp/sky130_fd_sc_hd__sedfxbp.behavioral.v:51.12-51.15" *)
   input CLK;
   (* src = "sedfxbp/sky130_fd_sc_hd__sedfxbp.behavioral.v:70.10-70.21" *)
-  wire CLK_delayed;
+  wire CLK;
   (* src = "sedfxbp/sky130_fd_sc_hd__sedfxbp.behavioral.v:52.12-52.13" *)
   input D;
   (* src = "sedfxbp/sky130_fd_sc_hd__sedfxbp.behavioral.v:53.12-53.14" *)
   input DE;
   (* src = "sedfxbp/sky130_fd_sc_hd__sedfxbp.behavioral.v:67.10-67.20" *)
-  wire DE_delayed;
+  wire DE;
   (* src = "sedfxbp/sky130_fd_sc_hd__sedfxbp.behavioral.v:66.10-66.19" *)
-  wire D_delayed;
+  wire D;
   (* src = "sedfxbp/sky130_fd_sc_hd__sedfxbp.behavioral.v:49.12-49.13" *)
   output Q;
   (* src = "sedfxbp/sky130_fd_sc_hd__sedfxbp.behavioral.v:50.12-50.15" *)
@@ -20937,11 +20904,11 @@ module sky130_fd_sc_hd__sedfxbp(Q, Q_N, CLK, D, DE, SCD, SCE);
   (* src = "sedfxbp/sky130_fd_sc_hd__sedfxbp.behavioral.v:54.12-54.15" *)
   input SCD;
   (* src = "sedfxbp/sky130_fd_sc_hd__sedfxbp.behavioral.v:68.10-68.21" *)
-  wire SCD_delayed;
+  wire SCD;
   (* src = "sedfxbp/sky130_fd_sc_hd__sedfxbp.behavioral.v:55.12-55.15" *)
   input SCE;
   (* src = "sedfxbp/sky130_fd_sc_hd__sedfxbp.behavioral.v:69.10-69.21" *)
-  wire SCE_delayed;
+  wire SCE;
   (* src = "sedfxbp/sky130_fd_sc_hd__sedfxbp.behavioral.v:0.0-0.0" *)
   wire VGND;
   (* src = "sedfxbp/sky130_fd_sc_hd__sedfxbp.behavioral.v:0.0-0.0" *)
@@ -20967,23 +20934,23 @@ module sky130_fd_sc_hd__sedfxbp(Q, Q_N, CLK, D, DE, SCD, SCE);
   (* src = "sedfxbp/sky130_fd_sc_hd__sedfxbp.behavioral.v:65.10-65.18" *)
   wire notifier;
   assign _00_ = VPWR === (* src = "sedfxbp/sky130_fd_sc_hd__sedfxbp.behavioral.v:82.22-82.35" *) 1'h1;
-  assign _01_ = SCE_delayed === (* src = "sedfxbp/sky130_fd_sc_hd__sedfxbp.behavioral.v:83.33-83.53" *) 1'h0;
-  assign _02_ = DE_delayed === (* src = "sedfxbp/sky130_fd_sc_hd__sedfxbp.behavioral.v:83.61-83.80" *) 1'h1;
-  assign _03_ = SCE_delayed === (* src = "sedfxbp/sky130_fd_sc_hd__sedfxbp.behavioral.v:84.33-84.53" *) 1'h1;
-  assign _04_ = DE_delayed === (* src = "sedfxbp/sky130_fd_sc_hd__sedfxbp.behavioral.v:85.33-85.52" *) 1'h1;
+  assign _01_ = SCE === (* src = "sedfxbp/sky130_fd_sc_hd__sedfxbp.behavioral.v:83.33-83.53" *) 1'h0;
+  assign _02_ = DE === (* src = "sedfxbp/sky130_fd_sc_hd__sedfxbp.behavioral.v:83.61-83.80" *) 1'h1;
+  assign _03_ = SCE === (* src = "sedfxbp/sky130_fd_sc_hd__sedfxbp.behavioral.v:84.33-84.53" *) 1'h1;
+  assign _04_ = DE === (* src = "sedfxbp/sky130_fd_sc_hd__sedfxbp.behavioral.v:85.33-85.52" *) 1'h1;
   assign _05_ = awake && (* src = "sedfxbp/sky130_fd_sc_hd__sedfxbp.behavioral.v:83.22-83.55" *) _01_;
   assign _06_ = _05_ && (* src = "sedfxbp/sky130_fd_sc_hd__sedfxbp.behavioral.v:83.22-83.82" *) _02_;
   assign _07_ = awake && (* src = "sedfxbp/sky130_fd_sc_hd__sedfxbp.behavioral.v:84.22-84.55" *) _03_;
   assign _08_ = awake && (* src = "sedfxbp/sky130_fd_sc_hd__sedfxbp.behavioral.v:85.22-85.54" *) _04_;
   assign _09_ = _08_ && (* src = "sedfxbp/sky130_fd_sc_hd__sedfxbp.behavioral.v:85.22-85.87" *) _10_;
-  assign _10_ = D_delayed !== (* src = "sedfxbp/sky130_fd_sc_hd__sedfxbp.behavioral.v:85.60-85.85" *) SCD_delayed;
+  assign _10_ = D !== (* src = "sedfxbp/sky130_fd_sc_hd__sedfxbp.behavioral.v:85.60-85.85" *) SCD;
   assign _11_ = ~ (* src = "sedfxbp/sky130_fd_sc_hd__sedfxbp.behavioral.v:0.0-0.0" *) buf_Q;
   (* module_not_derived = 32'd1 *)
   (* src = "sedfxbp/sky130_fd_sc_hd__sedfxbp.behavioral.v:81.40-81.103" *)
   \sky130_fd_sc_hd__udp_dff$P_pp$PG$N  dff0 (
     buf_Q,
     mux_out,
-    CLK_delayed,
+    CLK,
     notifier,
     VPWR,
     VGND
@@ -20993,16 +20960,16 @@ module sky130_fd_sc_hd__sedfxbp(Q, Q_N, CLK, D, DE, SCD, SCE);
   sky130_fd_sc_hd__udp_mux_2to1 mux_2to10 (
     mux_out,
     de_d,
-    SCD_delayed,
-    SCE_delayed
+    SCD,
+    SCE
   );
   (* module_not_derived = 32'd1 *)
   (* src = "sedfxbp/sky130_fd_sc_hd__sedfxbp.behavioral.v:80.40-80.103" *)
   sky130_fd_sc_hd__udp_mux_2to1 mux_2to11 (
     de_d,
     buf_Q,
-    D_delayed,
-    DE_delayed
+    D,
+    DE
   );
   assign VPWR = 1'h1;
   assign VGND = 1'h0;
@@ -21128,25 +21095,25 @@ module sky130_fd_sc_hd__sedfxtp(Q, CLK, D, DE, SCD, SCE);
   (* src = "sedfxtp/sky130_fd_sc_hd__sedfxtp.behavioral.v:49.12-49.15" *)
   input CLK;
   (* src = "sedfxtp/sky130_fd_sc_hd__sedfxtp.behavioral.v:68.10-68.21" *)
-  wire CLK_delayed;
+  wire CLK;
   (* src = "sedfxtp/sky130_fd_sc_hd__sedfxtp.behavioral.v:50.12-50.13" *)
   input D;
   (* src = "sedfxtp/sky130_fd_sc_hd__sedfxtp.behavioral.v:51.12-51.14" *)
   input DE;
   (* src = "sedfxtp/sky130_fd_sc_hd__sedfxtp.behavioral.v:65.10-65.20" *)
-  wire DE_delayed;
+  wire DE;
   (* src = "sedfxtp/sky130_fd_sc_hd__sedfxtp.behavioral.v:64.10-64.19" *)
-  wire D_delayed;
+  wire D;
   (* src = "sedfxtp/sky130_fd_sc_hd__sedfxtp.behavioral.v:48.12-48.13" *)
   output Q;
   (* src = "sedfxtp/sky130_fd_sc_hd__sedfxtp.behavioral.v:52.12-52.15" *)
   input SCD;
   (* src = "sedfxtp/sky130_fd_sc_hd__sedfxtp.behavioral.v:66.10-66.21" *)
-  wire SCD_delayed;
+  wire SCD;
   (* src = "sedfxtp/sky130_fd_sc_hd__sedfxtp.behavioral.v:53.12-53.15" *)
   input SCE;
   (* src = "sedfxtp/sky130_fd_sc_hd__sedfxtp.behavioral.v:67.10-67.21" *)
-  wire SCE_delayed;
+  wire SCE;
   (* src = "sedfxtp/sky130_fd_sc_hd__sedfxtp.behavioral.v:0.0-0.0" *)
   wire VGND;
   (* src = "sedfxtp/sky130_fd_sc_hd__sedfxtp.behavioral.v:0.0-0.0" *)
@@ -21172,22 +21139,22 @@ module sky130_fd_sc_hd__sedfxtp(Q, CLK, D, DE, SCD, SCE);
   (* src = "sedfxtp/sky130_fd_sc_hd__sedfxtp.behavioral.v:63.10-63.18" *)
   wire notifier;
   assign _00_ = VPWR === (* src = "sedfxtp/sky130_fd_sc_hd__sedfxtp.behavioral.v:80.22-80.35" *) 1'h1;
-  assign _01_ = SCE_delayed === (* src = "sedfxtp/sky130_fd_sc_hd__sedfxtp.behavioral.v:81.33-81.53" *) 1'h0;
-  assign _02_ = DE_delayed === (* src = "sedfxtp/sky130_fd_sc_hd__sedfxtp.behavioral.v:81.61-81.80" *) 1'h1;
-  assign _03_ = SCE_delayed === (* src = "sedfxtp/sky130_fd_sc_hd__sedfxtp.behavioral.v:82.33-82.53" *) 1'h1;
-  assign _04_ = DE_delayed === (* src = "sedfxtp/sky130_fd_sc_hd__sedfxtp.behavioral.v:83.33-83.52" *) 1'h1;
+  assign _01_ = SCE === (* src = "sedfxtp/sky130_fd_sc_hd__sedfxtp.behavioral.v:81.33-81.53" *) 1'h0;
+  assign _02_ = DE === (* src = "sedfxtp/sky130_fd_sc_hd__sedfxtp.behavioral.v:81.61-81.80" *) 1'h1;
+  assign _03_ = SCE === (* src = "sedfxtp/sky130_fd_sc_hd__sedfxtp.behavioral.v:82.33-82.53" *) 1'h1;
+  assign _04_ = DE === (* src = "sedfxtp/sky130_fd_sc_hd__sedfxtp.behavioral.v:83.33-83.52" *) 1'h1;
   assign _05_ = awake && (* src = "sedfxtp/sky130_fd_sc_hd__sedfxtp.behavioral.v:81.22-81.55" *) _01_;
   assign _06_ = _05_ && (* src = "sedfxtp/sky130_fd_sc_hd__sedfxtp.behavioral.v:81.22-81.82" *) _02_;
   assign _07_ = awake && (* src = "sedfxtp/sky130_fd_sc_hd__sedfxtp.behavioral.v:82.22-82.55" *) _03_;
   assign _08_ = awake && (* src = "sedfxtp/sky130_fd_sc_hd__sedfxtp.behavioral.v:83.22-83.54" *) _04_;
   assign _09_ = _08_ && (* src = "sedfxtp/sky130_fd_sc_hd__sedfxtp.behavioral.v:83.22-83.87" *) _10_;
-  assign _10_ = D_delayed !== (* src = "sedfxtp/sky130_fd_sc_hd__sedfxtp.behavioral.v:83.60-83.85" *) SCD_delayed;
+  assign _10_ = D !== (* src = "sedfxtp/sky130_fd_sc_hd__sedfxtp.behavioral.v:83.60-83.85" *) SCD;
   (* module_not_derived = 32'd1 *)
   (* src = "sedfxtp/sky130_fd_sc_hd__sedfxtp.behavioral.v:79.40-79.103" *)
   \sky130_fd_sc_hd__udp_dff$P_pp$PG$N  dff0 (
     buf_Q,
     mux_out,
-    CLK_delayed,
+    CLK,
     notifier,
     VPWR,
     VGND
@@ -21197,16 +21164,16 @@ module sky130_fd_sc_hd__sedfxtp(Q, CLK, D, DE, SCD, SCE);
   sky130_fd_sc_hd__udp_mux_2to1 mux_2to10 (
     mux_out,
     de_d,
-    SCD_delayed,
-    SCE_delayed
+    SCD,
+    SCE
   );
   (* module_not_derived = 32'd1 *)
   (* src = "sedfxtp/sky130_fd_sc_hd__sedfxtp.behavioral.v:78.40-78.103" *)
   sky130_fd_sc_hd__udp_mux_2to1 mux_2to11 (
     de_d,
     buf_Q,
-    D_delayed,
-    DE_delayed
+    D,
+    DE
   );
   assign VPWR = 1'h1;
   assign VGND = 1'h0;
@@ -22022,3 +21989,1425 @@ module sky130_fd_sc_hd__xor3_4(X, A, B, C);
   assign VPB = 1'h1;
   assign VNB = 1'h0;
 endmodule
+/**
+ * Copyright 2020 The SkyWater PDK Authors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+`ifndef SKY130_FD_SC_HD__UDP_DFF_NSR_V
+`define SKY130_FD_SC_HD__UDP_DFF_NSR_V
+
+/**
+ * udp_dff$NSR: Negative edge triggered D flip-flop (Q output UDP)
+ *              with both active high reset and set (set dominate).
+ *
+ * Verilog primitive definition.
+ *
+ * WARNING: This file is autogenerated, do not modify directly!
+ */
+
+`default_nettype none
+
+`ifdef NO_PRIMITIVES
+`include "./sky130_fd_sc_hd__udp_dff_nsr.blackbox.v"
+`else
+module sky130_fd_sc_hd__udp_dff$NSR (
+    Q    ,
+    SET  ,
+    RESET,
+    CLK_N,
+    D
+);
+
+    output Q    ;
+    input  SET  ;
+    input  RESET;
+    input  CLK_N;
+    input  D    ;
+
+    reg Q;
+
+    always @(negedge CLK_N) begin
+      if (RESET) begin
+        Q <= 1'h0;
+      end else if (SET) begin
+        Q <= 1'h1;
+      end else begin
+        Q <= D;
+      end
+    end
+
+endmodule
+`endif // NO_PRIMITIVES
+
+`default_nettype wire
+`endif  // SKY130_FD_SC_HD__UDP_DFF_NSR_V
+/**
+ * Copyright 2020 The SkyWater PDK Authors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+`ifndef SKY130_FD_SC_HD__UDP_DFF_NSR_PP_PG_N_V
+`define SKY130_FD_SC_HD__UDP_DFF_NSR_PP_PG_N_V
+
+/**
+ * udp_dff$NSR_pp$PG$N: Negative edge triggered D flip-flop
+ *                      (Q output UDP) with both active high reset and
+ *                      set (set dominate). Includes VPWR and VGND
+ *                      power pins and notifier pin.
+ *
+ * Verilog primitive definition.
+ *
+ * WARNING: This file is autogenerated, do not modify directly!
+ */
+
+`default_nettype none
+
+`ifdef NO_PRIMITIVES
+`include "./sky130_fd_sc_hd__udp_dff_nsr_pp_pg_n.blackbox.v"
+`else
+module sky130_fd_sc_hd__udp_dff$NSR_pp$PG$N (
+    Q       ,
+    SET     ,
+    RESET   ,
+    CLK_N   ,
+    D       ,
+    NOTIFIER,
+    VPWR    ,
+    VGND
+);
+
+    output Q       ;
+    input  SET     ;
+    input  RESET   ;
+    input  CLK_N   ;
+    input  D       ;
+    input  NOTIFIER;
+    input  VPWR    ;
+    input  VGND    ;
+
+    reg Q;
+
+    always @(negedge CLK_N) begin
+      if (RESET) begin
+        Q <= 0;
+      end else if (SET) begin
+        Q <= 1;
+      end else begin
+        Q <= D;
+      end
+    end
+
+endmodule
+`endif // NO_PRIMITIVES
+
+`default_nettype wire
+`endif  // SKY130_FD_SC_HD__UDP_DFF_NSR_PP_PG_N_V
+/**
+ * Copyright 2020 The SkyWater PDK Authors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+`ifndef SKY130_FD_SC_HD__UDP_DFF_P_V
+`define SKY130_FD_SC_HD__UDP_DFF_P_V
+
+/**
+ * udp_dff$P: Positive edge triggered D flip-flop (Q output UDP).
+ *
+ * Verilog primitive definition.
+ *
+ * WARNING: This file is autogenerated, do not modify directly!
+ */
+
+`default_nettype none
+
+`ifdef NO_PRIMITIVES
+`include "./sky130_fd_sc_hd__udp_dff_p.blackbox.v"
+`else
+module sky130_fd_sc_hd__udp_dff$P (
+    Q  ,
+    D  ,
+    CLK
+);
+
+    output Q  ;
+    input  D  ;
+    input  CLK;
+
+    reg Q;
+
+    always @(posedge CLK) begin
+      Q <= D;
+    end
+
+endmodule
+`endif // NO_PRIMITIVES
+
+`default_nettype wire
+`endif  // SKY130_FD_SC_HD__UDP_DFF_P_V
+/**
+ * Copyright 2020 The SkyWater PDK Authors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+`ifndef SKY130_FD_SC_HD__UDP_DFF_P_PP_PG_N_V
+`define SKY130_FD_SC_HD__UDP_DFF_P_PP_PG_N_V
+
+/**
+ * udp_dff$P_pp$PG$N: Positive edge triggered D flip-flop
+ *                    (Q output UDP).
+ *
+ * Verilog primitive definition.
+ *
+ * WARNING: This file is autogenerated, do not modify directly!
+ */
+
+`default_nettype none
+
+`ifdef NO_PRIMITIVES
+`include "./sky130_fd_sc_hd__udp_dff_p_pp_pg_n.blackbox.v"
+`else
+module sky130_fd_sc_hd__udp_dff$P_pp$PG$N (
+    Q       ,
+    D       ,
+    CLK     ,
+    NOTIFIER,
+    VPWR    ,
+    VGND
+);
+
+    output Q       ;
+    input  D       ;
+    input  CLK     ;
+    input  NOTIFIER;
+    input  VPWR    ;
+    input  VGND    ;
+
+    reg Q;
+
+    always @(posedge CLK) begin
+      Q <= D;
+    end
+
+endmodule
+`endif // NO_PRIMITIVES
+
+`default_nettype wire
+`endif  // SKY130_FD_SC_HD__UDP_DFF_P_PP_PG_N_V
+/**
+ * Copyright 2020 The SkyWater PDK Authors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+`ifndef SKY130_FD_SC_HD__UDP_DFF_PR_V
+`define SKY130_FD_SC_HD__UDP_DFF_PR_V
+
+/**
+ * udp_dff$PR: Positive edge triggered D flip-flop with active high
+ *
+ * Verilog primitive definition.
+ *
+ * WARNING: This file is autogenerated, do not modify directly!
+ */
+
+`default_nettype none
+
+`ifdef NO_PRIMITIVES
+`include "./sky130_fd_sc_hd__udp_dff_pr.blackbox.v"
+`else
+module sky130_fd_sc_hd__udp_dff$PR (
+    Q    ,
+    D    ,
+    CLK  ,
+    RESET
+);
+
+    output Q    ;
+    input  D    ;
+    input  CLK  ;
+    input  RESET;
+
+    reg Q;
+
+    always @(posedge CLK) begin
+      if (RESET) begin
+        Q <= 1'h0;
+      end else begin
+        Q <= D;
+      end
+    end
+
+endmodule
+`endif // NO_PRIMITIVES
+
+`default_nettype wire
+`endif  // SKY130_FD_SC_HD__UDP_DFF_PR_V
+/**
+ * Copyright 2020 The SkyWater PDK Authors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+`ifndef SKY130_FD_SC_HD__UDP_DFF_PR_PP_PG_N_V
+`define SKY130_FD_SC_HD__UDP_DFF_PR_PP_PG_N_V
+
+/**
+ * udp_dff$PR_pp$PG$N: Positive edge triggered D flip-flop with active
+ *                     high
+ *
+ * Verilog primitive definition.
+ *
+ * WARNING: This file is autogenerated, do not modify directly!
+ */
+
+`default_nettype none
+
+`ifdef NO_PRIMITIVES
+`include "./sky130_fd_sc_hd__udp_dff_pr_pp_pg_n.blackbox.v"
+`else
+module sky130_fd_sc_hd__udp_dff$PR_pp$PG$N (
+    Q       ,
+    D       ,
+    CLK     ,
+    RESET   ,
+    NOTIFIER,
+    VPWR    ,
+    VGND
+);
+
+    output Q       ;
+    input  D       ;
+    input  CLK     ;
+    input  RESET   ;
+    input  NOTIFIER;
+    input  VPWR    ;
+    input  VGND    ;
+
+    reg Q;
+
+    always @(posedge CLK) begin
+      if (RESET) begin
+        Q <= 0;
+      end else begin
+        Q <= D;
+      end
+    end
+
+endmodule
+`endif // NO_PRIMITIVES
+
+`default_nettype wire
+`endif  // SKY130_FD_SC_HD__UDP_DFF_PR_PP_PG_N_V
+/**
+ * Copyright 2020 The SkyWater PDK Authors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+`ifndef SKY130_FD_SC_HD__UDP_DFF_PS_V
+`define SKY130_FD_SC_HD__UDP_DFF_PS_V
+
+/**
+ * udp_dff$PS: Positive edge triggered D flip-flop with active high
+ *
+ * Verilog primitive definition.
+ *
+ * WARNING: This file is autogenerated, do not modify directly!
+ */
+
+`default_nettype none
+
+`ifdef NO_PRIMITIVES
+`include "./sky130_fd_sc_hd__udp_dff_ps.blackbox.v"
+`else
+module sky130_fd_sc_hd__udp_dff$PS (
+    Q  ,
+    D  ,
+    CLK,
+    SET
+);
+
+    output Q  ;
+    input  D  ;
+    input  CLK;
+    input  SET;
+
+    reg Q;
+
+    always @(posedge CLK) begin
+      if (SET) begin
+        Q <= 1'h1;
+      end else begin
+        Q <= D;
+      end
+    end
+
+endmodule
+`endif // NO_PRIMITIVES
+
+`default_nettype wire
+`endif  // SKY130_FD_SC_HD__UDP_DFF_PS_V
+/**
+ * Copyright 2020 The SkyWater PDK Authors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+`ifndef SKY130_FD_SC_HD__UDP_DFF_PS_PP_PG_N_V
+`define SKY130_FD_SC_HD__UDP_DFF_PS_PP_PG_N_V
+
+/**
+ * udp_dff$PS_pp$PG$N: Positive edge triggered D flip-flop with active
+ *                     high
+ *
+ * Verilog primitive definition.
+ *
+ * WARNING: This file is autogenerated, do not modify directly!
+ */
+
+`default_nettype none
+
+`ifdef NO_PRIMITIVES
+`include "./sky130_fd_sc_hd__udp_dff_ps_pp_pg_n.blackbox.v"
+`else
+module sky130_fd_sc_hd__udp_dff$PS_pp$PG$N (
+    Q       ,
+    D       ,
+    CLK     ,
+    SET     ,
+    NOTIFIER,
+    VPWR    ,
+    VGND
+);
+
+    output Q       ;
+    input  D       ;
+    input  CLK     ;
+    input  SET     ;
+    input  NOTIFIER;
+    input  VPWR    ;
+    input  VGND    ;
+
+    reg Q;
+
+    always @(posedge CLK) begin
+      if (SET) begin
+        Q <= 1;
+      end else begin
+        Q <= D;
+      end
+    end
+
+endmodule
+`endif // NO_PRIMITIVES
+
+`default_nettype wire
+`endif  // SKY130_FD_SC_HD__UDP_DFF_PS_PP_PG_N_V
+/**
+ * Copyright 2020 The SkyWater PDK Authors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+`ifndef SKY130_FD_SC_HD__UDP_DLATCH_LP_V
+`define SKY130_FD_SC_HD__UDP_DLATCH_LP_V
+
+/**
+ * udp_dlatch$lP: D-latch, gated standard drive / active high
+ *                (Q output UDP)
+ *
+ * Verilog primitive definition.
+ *
+ * WARNING: This file is autogenerated, do not modify directly!
+ */
+
+`default_nettype none
+
+`ifdef NO_PRIMITIVES
+`include "./sky130_fd_sc_hd__udp_dlatch_lp.blackbox.v"
+`else
+module sky130_fd_sc_hd__udp_dlatch$lP (
+    Q   ,
+    D   ,
+    GATE
+);
+
+    output Q   ;
+    input  D   ;
+    input  GATE;
+
+    reg Q;
+
+    always @(*) begin
+      if (GATE) begin
+        Q = D;
+      end
+    end
+
+endmodule
+`endif // NO_PRIMITIVES
+
+`default_nettype wire
+`endif  // SKY130_FD_SC_HD__UDP_DLATCH_LP_V
+/**
+ * Copyright 2020 The SkyWater PDK Authors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+`ifndef SKY130_FD_SC_HD__UDP_DLATCH_LP_PP_PG_N_V
+`define SKY130_FD_SC_HD__UDP_DLATCH_LP_PP_PG_N_V
+
+/**
+ * udp_dlatch$lP_pp$PG$N: D-latch, gated standard drive / active high
+ *                        (Q output UDP)
+ *
+ * Verilog primitive definition.
+ *
+ * WARNING: This file is autogenerated, do not modify directly!
+ */
+
+`default_nettype none
+
+`ifdef NO_PRIMITIVES
+`include "./sky130_fd_sc_hd__udp_dlatch_lp_pp_pg_n.blackbox.v"
+`else
+module sky130_fd_sc_hd__udp_dlatch$lP_pp$PG$N (
+    Q       ,
+    D       ,
+    GATE    ,
+    NOTIFIER,
+    VPWR    ,
+    VGND
+);
+
+    output Q       ;
+    input  D       ;
+    input  GATE    ;
+    input  NOTIFIER;
+    input  VPWR    ;
+    input  VGND    ;
+
+    reg Q;
+
+    always @(*) begin
+      if (GATE) begin
+        Q = D;
+      end
+    end
+endmodule
+`endif // NO_PRIMITIVES
+
+`default_nettype wire
+`endif  // SKY130_FD_SC_HD__UDP_DLATCH_LP_PP_PG_N_V
+/**
+ * Copyright 2020 The SkyWater PDK Authors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+`ifndef SKY130_FD_SC_HD__UDP_DLATCH_P_V
+`define SKY130_FD_SC_HD__UDP_DLATCH_P_V
+
+/**
+ * udp_dlatch$P: D-latch, gated standard drive / active high
+ *               (Q output UDP)
+ *
+ * Verilog primitive definition.
+ *
+ * WARNING: This file is autogenerated, do not modify directly!
+ */
+
+`default_nettype none
+
+`ifdef NO_PRIMITIVES
+`include "./sky130_fd_sc_hd__udp_dlatch_p.blackbox.v"
+`else
+module sky130_fd_sc_hd__udp_dlatch$P (
+    Q   ,
+    D   ,
+    GATE
+);
+
+    output Q   ;
+    input  D   ;
+    input  GATE;
+
+    reg Q;
+
+    always @(*) begin
+      if (GATE) begin
+        Q = D;
+      end
+    end
+
+endmodule
+`endif // NO_PRIMITIVES
+
+`default_nettype wire
+`endif  // SKY130_FD_SC_HD__UDP_DLATCH_P_V
+/**
+ * Copyright 2020 The SkyWater PDK Authors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+`ifndef SKY130_FD_SC_HD__UDP_DLATCH_P_PP_PG_N_V
+`define SKY130_FD_SC_HD__UDP_DLATCH_P_PP_PG_N_V
+
+/**
+ * udp_dlatch$P_pp$PG$N: D-latch, gated standard drive / active high
+ *                       (Q output UDP)
+ *
+ * Verilog primitive definition.
+ *
+ * WARNING: This file is autogenerated, do not modify directly!
+ */
+
+`default_nettype none
+
+`ifdef NO_PRIMITIVES
+`include "./sky130_fd_sc_hd__udp_dlatch_p_pp_pg_n.blackbox.v"
+`else
+module sky130_fd_sc_hd__udp_dlatch$P_pp$PG$N (
+    Q       ,
+    D       ,
+    GATE    ,
+    NOTIFIER,
+    VPWR    ,
+    VGND
+);
+
+    output Q       ;
+    input  D       ;
+    input  GATE    ;
+    input  NOTIFIER;
+    input  VPWR    ;
+    input  VGND    ;
+
+    reg Q;
+
+    always @(*) begin
+      if (GATE) begin
+        Q = D;
+      end
+    end
+
+endmodule
+`endif // NO_PRIMITIVES
+
+`default_nettype wire
+`endif  // SKY130_FD_SC_HD__UDP_DLATCH_P_PP_PG_N_V
+/**
+ * Copyright 2020 The SkyWater PDK Authors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+`ifndef SKY130_FD_SC_HD__UDP_DLATCH_PR_V
+`define SKY130_FD_SC_HD__UDP_DLATCH_PR_V
+
+/**
+ * udp_dlatch$PR: D-latch, gated clear direct / gate active high
+ *                (Q output UDP)
+ *
+ * Verilog primitive definition.
+ *
+ * WARNING: This file is autogenerated, do not modify directly!
+ */
+
+`default_nettype none
+
+`ifdef NO_PRIMITIVES
+`include "./sky130_fd_sc_hd__udp_dlatch_pr.blackbox.v"
+`else
+module sky130_fd_sc_hd__udp_dlatch$PR (
+    Q    ,
+    D    ,
+    GATE ,
+    RESET
+);
+
+    output Q    ;
+    input  D    ;
+    input  GATE ;
+    input  RESET;
+
+    reg Q;
+
+    always @(*) begin
+      if (RESET) begin
+        Q = 1'h1;
+      end else if (GATE) begin
+        Q = D;
+      end
+    end
+
+endmodule
+`endif // NO_PRIMITIVES
+
+`default_nettype wire
+`endif  // SKY130_FD_SC_HD__UDP_DLATCH_PR_V
+/**
+ * Copyright 2020 The SkyWater PDK Authors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+`ifndef SKY130_FD_SC_HD__UDP_DLATCH_PR_PP_PG_N_V
+`define SKY130_FD_SC_HD__UDP_DLATCH_PR_PP_PG_N_V
+
+/**
+ * udp_dlatch$PR_pp$PG$N: D-latch, gated clear direct / gate active
+ *                        high (Q output UDP)
+ *
+ * Verilog primitive definition.
+ *
+ * WARNING: This file is autogenerated, do not modify directly!
+ */
+
+`default_nettype none
+
+`ifdef NO_PRIMITIVES
+`include "./sky130_fd_sc_hd__udp_dlatch_pr_pp_pg_n.blackbox.v"
+`else
+module sky130_fd_sc_hd__udp_dlatch$PR_pp$PG$N (
+    Q       ,
+    D       ,
+    GATE    ,
+    RESET   ,
+    NOTIFIER,
+    VPWR    ,
+    VGND
+);
+
+    output Q       ;
+    input  D       ;
+    input  GATE    ;
+    input  RESET   ;
+    input  NOTIFIER;
+    input  VPWR    ;
+    input  VGND    ;
+
+    reg Q;
+
+    always @(*) begin
+      if (RESET) begin
+        Q = 0;
+      end else if (GATE) begin
+        Q = D;
+      end
+    end
+
+endmodule
+`endif // NO_PRIMITIVES
+
+`default_nettype wire
+`endif  // SKY130_FD_SC_HD__UDP_DLATCH_PR_PP_PG_N_V
+/**
+ * Copyright 2020 The SkyWater PDK Authors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+`ifndef SKY130_FD_SC_HD__UDP_MUX_2TO1_V
+`define SKY130_FD_SC_HD__UDP_MUX_2TO1_V
+
+/**
+ * udp_mux_2to1: Two to one multiplexer
+ *
+ * Verilog primitive definition.
+ *
+ * WARNING: This file is autogenerated, do not modify directly!
+ */
+
+`default_nettype none
+
+`ifdef NO_PRIMITIVES
+`include "./sky130_fd_sc_hd__udp_mux_2to1.blackbox.v"
+`else
+module sky130_fd_sc_hd__udp_mux_2to1 (
+    X ,
+    A0,
+    A1,
+    S
+);
+
+    output reg X ;
+    input  A0;
+    input  A1;
+    input  S ;
+
+    /* verilator lint_off CASEOVERLAP */
+    always @(*) begin
+      casez ({A0,A1,S})
+         {1'h0,  1'h0,  1'h?} :  X = 0   ;
+         {1'h1,  1'h1,  1'h?} :  X = 1   ;
+         {1'h0,  1'h?,  1'h0} :  X = 0   ;
+         {1'h1,  1'h?,  1'h0} :  X = 1   ;
+         {1'h?,  1'h0,  1'h1} :  X = 0   ;
+         {1'h?,  1'h1,  1'h1} :  X = 1   ;
+       endcase
+     end
+
+endmodule
+`endif // NO_PRIMITIVES
+
+`default_nettype wire
+`endif  // SKY130_FD_SC_HD__UDP_MUX_2TO1_V
+/**
+ * Copyright 2020 The SkyWater PDK Authors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+`ifndef SKY130_FD_SC_HD__UDP_MUX_2TO1_N_V
+`define SKY130_FD_SC_HD__UDP_MUX_2TO1_N_V
+
+/**
+ * udp_mux_2to1_N: Two to one multiplexer with inverting output
+ *
+ * Verilog primitive definition.
+ *
+ * WARNING: This file is autogenerated, do not modify directly!
+ */
+
+`default_nettype none
+
+`ifdef NO_PRIMITIVES
+`include "./sky130_fd_sc_hd__udp_mux_2to1_n.blackbox.v"
+`else
+module sky130_fd_sc_hd__udp_mux_2to1_N (
+    Y ,
+    A0,
+    A1,
+    S
+);
+
+    output reg Y ;
+    input  A0;
+    input  A1;
+    input  S ;
+
+    /* verilator lint_off CASEOVERLAP */
+    always @(*) begin
+      casez({A0,A1,S}) 
+         {1'h0,   1'h?,   1'h0}  :  Y = 1   ;
+         {1'h1,   1'h?,   1'h0}  :  Y = 0   ;
+         {1'h?,   1'h0,   1'h1}  :  Y = 1   ;
+         {1'h?,   1'h1,   1'h1}  :  Y = 0   ;
+         {1'h0,   1'h0,   1'h?}  :  Y = 1   ;
+         {1'h1,   1'h1,   1'h?}  :  Y = 0   ;
+       endcase
+     end
+
+endmodule
+`endif // NO_PRIMITIVES
+
+`default_nettype wire
+`endif  // SKY130_FD_SC_HD__UDP_MUX_2TO1_N_V
+/**
+ * Copyright 2020 The SkyWater PDK Authors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+`ifndef SKY130_FD_SC_HD__UDP_MUX_4TO2_V
+`define SKY130_FD_SC_HD__UDP_MUX_4TO2_V
+
+/**
+ * udp_mux_4to2: Four to one multiplexer with 2 select controls
+ *
+ * Verilog primitive definition.
+ *
+ * WARNING: This file is autogenerated, do not modify directly!
+ */
+
+`default_nettype none
+
+`ifdef NO_PRIMITIVES
+`include "./sky130_fd_sc_hd__udp_mux_4to2.blackbox.v"
+`else
+module sky130_fd_sc_hd__udp_mux_4to2 (
+    X ,
+    A0,
+    A1,
+    A2,
+    A3,
+    S0,
+    S1
+);
+
+    output reg X ;
+    input  A0;
+    input  A1;
+    input  A2;
+    input  A3;
+    input  S0;
+    input  S1;
+
+    always @(*) begin
+
+    /* verilator lint_off CASEOVERLAP */
+      casez({A0,A1,A2,A3,S0,S1})
+         {1'h0,  1'h?,  1'h?,  1'h?,  1'h0,  1'h0} :  X=0   ;
+         {1'h1,  1'h?,  1'h?,  1'h?,  1'h0,  1'h0} :  X=1   ;
+         {1'h?,  1'h0,  1'h?,  1'h?,  1'h1,  1'h0} :  X=0   ;
+         {1'h?,  1'h1,  1'h?,  1'h?,  1'h1,  1'h0} :  X=1   ;
+         {1'h?,  1'h?,  1'h0,  1'h?,  1'h0,  1'h1} :  X=0   ;
+         {1'h?,  1'h?,  1'h1,  1'h?,  1'h0,  1'h1} :  X=1   ;
+         {1'h?,  1'h?,  1'h?,  1'h0,  1'h1,  1'h1} :  X=0   ;
+         {1'h?,  1'h?,  1'h?,  1'h1,  1'h1,  1'h1} :  X=1   ;
+         {1'h0,  1'h0,  1'h0,  1'h0,  1'h?,  1'h?} :  X=0   ;
+         {1'h1,  1'h1,  1'h1,  1'h1,  1'h?,  1'h?} :  X=1   ;
+         {1'h0,  1'h0,  1'h?,  1'h?,  1'h?,  1'h0} :  X=0   ;
+         {1'h1,  1'h1,  1'h?,  1'h?,  1'h?,  1'h0} :  X=1   ;
+         {1'h?,  1'h?,  1'h0,  1'h0,  1'h?,  1'h1} :  X=0   ;
+         {1'h?,  1'h?,  1'h1,  1'h1,  1'h?,  1'h1} :  X=1   ;
+         {1'h0,  1'h?,  1'h0,  1'h?,  1'h0,  1'h?} :  X=0   ;
+         {1'h1,  1'h?,  1'h1,  1'h?,  1'h0,  1'h?} :  X=1   ;
+         {1'h?,  1'h0,  1'h?,  1'h0,  1'h1,  1'h?} :  X=0   ;
+         {1'h?,  1'h1,  1'h?,  1'h1,  1'h1,  1'h?} :  X=1   ;
+       endcase
+     end
+
+endmodule
+`endif // NO_PRIMITIVES
+
+`default_nettype wire
+`endif  // SKY130_FD_SC_HD__UDP_MUX_4TO2_V
+/**
+ * Copyright 2020 The SkyWater PDK Authors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+`ifndef SKY130_FD_SC_HD__UDP_PWRGOOD_L_PP_G_V
+`define SKY130_FD_SC_HD__UDP_PWRGOOD_L_PP_G_V
+
+/**
+
+ *   UDP_OUT :=x when VGND!=0
+ *   UDP_OUT :=UDP_IN when VGND==0
+ *
+ * Verilog primitive definition.
+ *
+ * WARNING: This file is autogenerated, do not modify directly!
+ */
+
+`default_nettype none
+
+`ifdef NO_PRIMITIVES
+`include "./sky130_fd_sc_hd__udp_pwrgood_l_pp_g.blackbox.v"
+`else
+module sky130_fd_sc_hd__udp_pwrgood$l_pp$G (
+    UDP_OUT,
+    UDP_IN ,
+    VGND
+);
+
+    output UDP_OUT;
+    input  UDP_IN ;
+    input  VGND   ;
+
+    assign UDP_OUT = UDP_OUT & UDP_IN;
+
+endmodule
+`endif // NO_PRIMITIVES
+
+`default_nettype wire
+`endif  // SKY130_FD_SC_HD__UDP_PWRGOOD_L_PP_G_V
+/**
+ * Copyright 2020 The SkyWater PDK Authors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+`ifndef SKY130_FD_SC_HD__UDP_PWRGOOD_L_PP_PG_V
+`define SKY130_FD_SC_HD__UDP_PWRGOOD_L_PP_PG_V
+
+/**
+
+ *   UDP_OUT :=x when VPWR!=1 or VGND!=0
+ *   UDP_OUT :=UDP_IN when VPWR==1 and VGND==0
+ *
+ * Verilog primitive definition.
+ *
+ * WARNING: This file is autogenerated, do not modify directly!
+ */
+
+`default_nettype none
+
+`ifdef NO_PRIMITIVES
+`include "./sky130_fd_sc_hd__udp_pwrgood_l_pp_pg.blackbox.v"
+`else
+module sky130_fd_sc_hd__udp_pwrgood$l_pp$PG (
+    UDP_OUT,
+    UDP_IN ,
+    VPWR   ,
+    VGND
+);
+
+    output UDP_OUT;
+    input  UDP_IN ;
+    input  VPWR   ;
+    input  VGND   ;
+
+    assign UDP_OUT = UDP_IN & VPWR & ~VGND;
+
+endmodule
+`endif // NO_PRIMITIVES
+
+`default_nettype wire
+`endif  // SKY130_FD_SC_HD__UDP_PWRGOOD_L_PP_PG_V
+/**
+ * Copyright 2020 The SkyWater PDK Authors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+`ifndef SKY130_FD_SC_HD__UDP_PWRGOOD_L_PP_PG_S_V
+`define SKY130_FD_SC_HD__UDP_PWRGOOD_L_PP_PG_S_V
+
+/**
+
+ *   UDP_OUT :=x when VPWR!=1 or VGND!=0
+ *   UDP_OUT :=UDP_IN when VPWR==1 and VGND==0
+ *
+ * Verilog primitive definition.
+ *
+ * WARNING: This file is autogenerated, do not modify directly!
+ */
+
+`default_nettype none
+
+`ifdef NO_PRIMITIVES
+`include "./sky130_fd_sc_hd__udp_pwrgood_l_pp_pg_s.blackbox.v"
+`else
+module sky130_fd_sc_hd__udp_pwrgood$l_pp$PG$S (
+    UDP_OUT,
+    UDP_IN ,
+    VPWR   ,
+    VGND   ,
+    SLEEP
+);
+
+    output UDP_OUT;
+    input  UDP_IN ;
+    input  VPWR   ;
+    input  VGND   ;
+    input  SLEEP  ;
+
+    assign UPD_OUT = UPD_IN & VPWR & ~VGND & ~SLEEP;
+
+endmodule
+`endif // NO_PRIMITIVES
+
+`default_nettype wire
+`endif  // SKY130_FD_SC_HD__UDP_PWRGOOD_L_PP_PG_S_V
+/**
+ * Copyright 2020 The SkyWater PDK Authors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+`ifndef SKY130_FD_SC_HD__UDP_PWRGOOD_PP_G_V
+`define SKY130_FD_SC_HD__UDP_PWRGOOD_PP_G_V
+
+/**
+
+ *   UDP_OUT :=x when VPWR!=1
+ *   UDP_OUT :=UDP_IN when VPWR==1
+ *
+ * Verilog primitive definition.
+ *
+ * WARNING: This file is autogenerated, do not modify directly!
+ */
+
+`default_nettype none
+
+`ifdef NO_PRIMITIVES
+`include "./sky130_fd_sc_hd__udp_pwrgood_pp_g.blackbox.v"
+`else
+module sky130_fd_sc_hd__udp_pwrgood_pp$G (
+    UDP_OUT,
+    UDP_IN ,
+    VGND
+);
+
+    output UDP_OUT;
+    input  UDP_IN ;
+    input  VGND   ;
+
+    assign UDP_OUT = UDP_IN;
+
+endmodule
+`endif // NO_PRIMITIVES
+
+`default_nettype wire
+`endif  // SKY130_FD_SC_HD__UDP_PWRGOOD_PP_G_V
+/**
+ * Copyright 2020 The SkyWater PDK Authors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+`ifndef SKY130_FD_SC_HD__UDP_PWRGOOD_PP_P_V
+`define SKY130_FD_SC_HD__UDP_PWRGOOD_PP_P_V
+
+/**
+
+ *   UDP_OUT :=x when VPWR!=1
+ *   UDP_OUT :=UDP_IN when VPWR==1
+ *
+ * Verilog primitive definition.
+ *
+ * WARNING: This file is autogenerated, do not modify directly!
+ */
+
+`default_nettype none
+
+`ifdef NO_PRIMITIVES
+`include "./sky130_fd_sc_hd__udp_pwrgood_pp_p.blackbox.v"
+`else
+module sky130_fd_sc_hd__udp_pwrgood_pp$P (
+    UDP_OUT,
+    UDP_IN ,
+    VPWR
+);
+
+    output UDP_OUT;
+    input  UDP_IN ;
+    input  VPWR   ;
+
+    assign UDP_OUT = UDP_IN & VPWR;
+
+endmodule
+`endif // NO_PRIMITIVES
+
+`default_nettype wire
+`endif  // SKY130_FD_SC_HD__UDP_PWRGOOD_PP_P_V
+/**
+ * Copyright 2020 The SkyWater PDK Authors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+`ifndef SKY130_FD_SC_HD__UDP_PWRGOOD_PP_PG_V
+`define SKY130_FD_SC_HD__UDP_PWRGOOD_PP_PG_V
+
+/**
+
+ *   UDP_OUT :=x when VPWR!=1 or VGND!=0
+ *   UDP_OUT :=UDP_IN when VPWR==1 and VGND==0
+ *
+ * Verilog primitive definition.
+ *
+ * WARNING: This file is autogenerated, do not modify directly!
+ */
+
+`default_nettype none
+
+`ifdef NO_PRIMITIVES
+`include "./sky130_fd_sc_hd__udp_pwrgood_pp_pg.blackbox.v"
+`else
+module sky130_fd_sc_hd__udp_pwrgood_pp$PG (
+    UDP_OUT,
+    UDP_IN ,
+    VPWR   ,
+    VGND
+);
+
+    output UDP_OUT;
+    input  UDP_IN ;
+    input  VPWR   ;
+    input  VGND   ;
+
+    assign UDP_OUT = UDP_IN & VPWR & ~VGND;
+
+endmodule
+`endif // NO_PRIMITIVES
+
+`default_nettype wire
+`endif  // SKY130_FD_SC_HD__UDP_PWRGOOD_PP_PG_V

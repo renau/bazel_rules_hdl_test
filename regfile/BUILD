@@ -16,6 +16,20 @@ cc_binary(
     deps = [":regfile_256_1w_1r"],
 )
 
+verilator_cc_library(
+    name = "regfile_256_1w_1r_gls",
+    mtop = "regfile_256_1w_1r",
+    srcs = [":verilog_regfile_synth", "//model:sky130"],
+    vopts = ["-Wno-DECLFILENAME", "--trace-underscore"],
+    trace = True,   # Enable VCD dump
+)
+
+cc_binary(
+    name = "top_gls",
+    srcs = ["dut_regfile.cpp"],
+    deps = [":regfile_256_1w_1r_gls"],
+)
+
 load("@rules_hdl_pip_deps//:requirements.bzl", "requirement")
 
 load("@rules_hdl//synthesis:build_defs.bzl", "synthesize_rtl")
@@ -26,9 +40,9 @@ place_and_route(
     name = "place_and_route",
     clock_period = "10",
     core_padding_microns = 20,
-    die_height_microns = 20000,
-    die_width_microns = 20000,
-    placement_density = "0.7",
+    die_height_microns = 200000,
+    die_width_microns = 200000,
+    placement_density = "0.5",
     synthesized_rtl = ":verilog_regfile_synth",
 )
 
