@@ -1,7 +1,7 @@
 #include <cstdio>
 #include <stdlib.h>
 
-#include "Vcounter.h"
+#include "Vsimple_gate.h"
 #include "verilated.h"
 #include "verilated_vcd_c.h"
 
@@ -19,7 +19,7 @@ void do_terminate() {
   exit(0);
 }
 
-void advance_clock(Vcounter *uut) {
+void advance_clock(Vsimple_gate *uut) {
   uut->clk ^= 1;
   uut->eval();
 #ifdef VM_TRACE
@@ -37,7 +37,7 @@ void advance_clock(Vcounter *uut) {
 }
 
 int main() {
-  Vcounter top;
+  Vsimple_gate top;
 #ifdef VM_TRACE
   // init trace dump
   Verilated::traceEverOn(true);
@@ -47,28 +47,22 @@ int main() {
   tfp->open("output.vcd");
 #endif
 
-  top.clk     = 1;
-  top.enable  = 0;
-  top.reset   = 1;
-  advance_clock(&top);
-  advance_clock(&top);
-  advance_clock(&top);
-  top.reset   = 0;
   advance_clock(&top);
 
-  int counter = 0;
+  bool a=true;
+  bool b=false;
+  while (global_time < 40000) {
 
-  while (global_time < 100000) {
-    bool enable = (rand() & 0xF) == 0;
-    top.enable = enable;
+    a = !a; // 100% switch rate
+    b = !b;
 
-    if (enable)
-      ++counter;
+    top.a = a;
+    top.b = b;
 
     advance_clock(&top);
 
-    if (top.out != counter) {
-      fprintf(stderr, "ERROR: unexpected output of %d vs %d\n", top.out, counter);
+    if (top.out != (a^b)) {
+      fprintf(stderr, "ERROR: unexpected output of %d vs %d\n", top.out, a^b);
       //do_terminate();
     }
   }

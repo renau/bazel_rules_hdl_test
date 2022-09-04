@@ -51,7 +51,7 @@ int main() {
 
   uint8_t conta=1;
 
-  while (global_time < 500) {
+  while (global_time < 3000) {
     top.wena = 1;
     top.waddr = conta & 0x1F;
     top.wdata = global_time;
