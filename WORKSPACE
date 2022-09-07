@@ -85,9 +85,9 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 # Verilator
 http_archive(
     name = "rules_verilator",
-    sha256 = "cf03570cb3bb87ef9c7c4bdfee9753a309b0cdd59a7247aab70c9a4c68b97913",
-    strip_prefix = "rules_verilator-c9d360d5b3cd1750472d37b57bfce0c6fa8d98e8",
-    urls = ["https://github.com/kkiningh/rules_verilator/archive/c9d360d5b3cd1750472d37b57bfce0c6fa8d98e8.tar.gz"],
+    sha256 = "0e81b8138b68e1cab25b8afeea60786b6162c62fef8029180c80c609fd7385cb",
+    strip_prefix = "rules_verilator-8bd890eb3a19d1af26499cd587d26d1f354090af",
+    urls = ["https://github.com/renau/rules_verilator/archive/8bd890eb3a19d1af26499cd587d26d1f354090af.tar.gz"],
 )
 
 load(
