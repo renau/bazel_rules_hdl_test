@@ -24,6 +24,8 @@ rules_pkg_dependencies()
 
 rules_hdl_git_hash = "3497bab04e37514dcdeb47e3090d57d78e2aa01a"
 rules_hdl_git_sha256 = "8e08ae3edf060f61025b54945e8492b2238d2026d8ac7afc021008600edd70d9"
+#rules_hdl_git_hash = "5eb04bfd56ce54c8a37eac967326fdc098086a5a"
+#rules_hdl_git_sha256 = "501b4777ff18357ca916d9f22e6d943c807bbfdbd8b87a00b0612e359447fc6d"
 
 http_archive(
     name = "rules_hdl",
@@ -31,7 +33,7 @@ http_archive(
     strip_prefix = "bazel_rules_hdl-%s" % rules_hdl_git_hash,
     urls = [
         "https://github.com/hdl/bazel_rules_hdl/archive/%s.tar.gz" % rules_hdl_git_hash,
-        # "https://github.com/renau/bazel_rules_hdl/archive/%s.tar.gz" % rules_hdl_git_hash,
+        #"https://github.com/renau/bazel_rules_hdl/archive/%s.tar.gz" % rules_hdl_git_hash,
     ],
 )
 
