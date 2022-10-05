@@ -7325,8 +7325,6 @@ module sky130_fd_sc_hd__dlrbn(Q, Q_N, RESET_B, D, GATE_N);
   (* src = "dlrbn/sky130_fd_sc_hd__dlrbn.behavioral.v:65.10-65.25" *)
   wire RESET_B;
   (* src = "dlrbn/sky130_fd_sc_hd__dlrbn.behavioral.v:64.10-64.23" *)
-  wire RESET;
-  (* src = "dlrbn/sky130_fd_sc_hd__dlrbn.behavioral.v:0.0-0.0" *)
   wire VGND;
   (* src = "dlrbn/sky130_fd_sc_hd__dlrbn.behavioral.v:0.0-0.0" *)
   wire VNB;
@@ -7486,8 +7484,6 @@ module sky130_fd_sc_hd__dlrbp(Q, Q_N, RESET_B, D, GATE);
   (* src = "dlrbp/sky130_fd_sc_hd__dlrbp.behavioral.v:64.10-64.25" *)
   wire RESET_B;
   (* src = "dlrbp/sky130_fd_sc_hd__dlrbp.behavioral.v:63.10-63.23" *)
-  wire RESET;
-  (* src = "dlrbp/sky130_fd_sc_hd__dlrbp.behavioral.v:0.0-0.0" *)
   wire VGND;
   (* src = "dlrbp/sky130_fd_sc_hd__dlrbp.behavioral.v:0.0-0.0" *)
   wire VNB;
@@ -7641,8 +7637,6 @@ module sky130_fd_sc_hd__dlrtn(Q, RESET_B, D, GATE_N);
   (* src = "dlrtn/sky130_fd_sc_hd__dlrtn.behavioral.v:62.10-62.25" *)
   wire RESET_B;
   (* src = "dlrtn/sky130_fd_sc_hd__dlrtn.behavioral.v:61.10-61.23" *)
-  wire RESET;
-  (* src = "dlrtn/sky130_fd_sc_hd__dlrtn.behavioral.v:0.0-0.0" *)
   wire VGND;
   (* src = "dlrtn/sky130_fd_sc_hd__dlrtn.behavioral.v:0.0-0.0" *)
   wire VNB;
@@ -7823,8 +7817,6 @@ module sky130_fd_sc_hd__dlrtp(Q, RESET_B, D, GATE);
   (* src = "dlrtp/sky130_fd_sc_hd__dlrtp.behavioral.v:62.10-62.25" *)
   wire RESET_B;
   (* src = "dlrtp/sky130_fd_sc_hd__dlrtp.behavioral.v:61.10-61.23" *)
-  wire RESET;
-  (* src = "dlrtp/sky130_fd_sc_hd__dlrtp.behavioral.v:0.0-0.0" *)
   wire VGND;
   (* src = "dlrtp/sky130_fd_sc_hd__dlrtp.behavioral.v:0.0-0.0" *)
   wire VNB;
@@ -9922,6 +9914,11 @@ module sky130_fd_sc_hd__fahcon_1(COUT_N, SUM, A, B, CI);
   assign VNB = 1'h0;
 endmodule
 
+module sky130_fd_sc_hd__decap_12();
+  // Nothing to do
+
+endmodule
+
 (* cells_not_processed =  1  *)
 (* src = "fill/sky130_fd_sc_hd__fill.behavioral.v:33.1-41.10" *)
 module sky130_fd_sc_hd__fill();
@@ -10328,6 +10325,12 @@ endmodule
 (* src = "lpflow_bleeder/sky130_fd_sc_hd__lpflow_bleeder_1.v:68.1-84.10" *)
 module sky130_fd_sc_hd__lpflow_bleeder_1(SHORT);
   input SHORT;
+endmodule
+
+module sky130_fd_sc_hd__clkbuf_16(X, A);
+  input A;
+  output X;
+  assign X = A;
 endmodule
 
 (* cells_not_processed =  1  *)
